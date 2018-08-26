@@ -1,0 +1,21 @@
+.btn {
+    font-size: 1em;
+    border: none;
+    outline: none;
+    padding: 8px 16px;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 2px 2px 2px gray;
+    }
+
+    &.green {
+        color: white;
+        background-color: #4CAF50;
+    }
+    
+    &.red {
+        color: white;
+        background-color: #d0056a;
+    }
+}
