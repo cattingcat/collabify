@@ -4,6 +4,7 @@ const
     HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+    mode: "development",
     entry: {
         app: [
             './src/App.tsx', 
@@ -26,10 +27,7 @@ module.exports = {
                 test: /\.scss$/,
                 use: [
                     'style-loader',
-                    {
-                        loader: 'css-loader', 
-                        options: {modules: true}
-                    },
+                    'css-loader',
                     'sass-loader'
                 ]
             },

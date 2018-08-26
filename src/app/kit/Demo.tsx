@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {ButtonDemo} from './button/demo/ButtonDemo';
-const s =  require('./demo.scss');
+import "./demo.scss";
 
 export class ComponentsDemo extends React.Component {
     render(): JSX.Element {
