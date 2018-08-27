@@ -1,11 +1,21 @@
 import * as React from 'react';
-import { KitColors } from '../../kit_core/KitColors';
 import './button.scss';
+
+export enum ButtonColors {
+    green = 'green', 
+    red = 'red',
+    cian = 'cian'
+}
+
+export enum ButtonStyle {
+    rectangle,
+    circle
+}
 
 interface IButtonProps {
    readonly text: String;
    readonly className?: String;
-   readonly color?: KitColors;
+   readonly color?: ButtonColors;
 }
 
 export class Button extends React.Component<IButtonProps> {

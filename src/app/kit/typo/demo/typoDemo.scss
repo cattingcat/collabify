@@ -1,13 +1,9 @@
 @import '../../common';
 
-.button_demo {
+.typo_demo {
     padding: 20px;
     border: solid $lightGray 1px;
     box-shadow: 0 0 1px $lightGray;
     box-sizing: border-box;
     margin-bottom: 10px;
-
-    .button_panel {
-        padding: 15px;
-    }
 }

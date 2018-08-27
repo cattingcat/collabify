@@ -1,6 +1,5 @@
 import * as React from 'react';
-import {Button} from '../Button';
-import { KitColors } from '../../../kit_core/KitColors';
+import {Button, ButtonColors} from '../Button';
 import './buttonDemo.scss';
 
 export class ButtonDemo extends React.Component {
@@ -12,10 +11,16 @@ export class ButtonDemo extends React.Component {
             
             <div>
                 <div className='button_panel'>
-                    <Button text='default button' />
+                    <Button text='green button' color={ButtonColors.green}/>
                 </div>
                 <div className='button_panel'>
-                    <Button text='red button' color={KitColors.red}/>
+                    <Button text='red button' color={ButtonColors.red}/>
+                </div>
+                <div className='button_panel'>
+                    <Button text='cian button' color={ButtonColors.cian}/>
+                </div>
+                <div className='button_panel'>
+                    <Button text='white button' color={ButtonColors.cian}/>
                 </div>
             </div>
         </div>
