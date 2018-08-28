@@ -2,13 +2,18 @@
 @import './app/kit/common';
 
 html {
-    font-family: "Raleway","apercu",sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Raleway", "apercu", sans-serif;
     padding: 0;
-    font-size: 13px;
+    font-size: 14px;
+    color: $black;
 }
 
 body {
     background: linear-gradient(to right, #fafafa, #f4f7f6);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 200;
 }
 
 a {
@@ -22,5 +27,23 @@ a {
 
     &:hover {
         color: $black;
+    }
+}
+
+input {
+    outline: none;
+    border: none;
+    border-bottom: solid $gray 1px;
+    background: transparent;
+    transition: $transition;
+    font-size: 1.1em;
+
+    &:focus {
+        border-bottom: solid $cian 1px;
+    }
+
+    &::placeholder {
+        font-size: 0.9em;
+        color: $gray;
     }
 }
