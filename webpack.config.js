@@ -10,12 +10,16 @@ module.exports = {
             './src/App.tsx', 
             'webpack-hot-middleware/client'
         ],
-        //vendor: ['react', 'react-dom']
+        project_list: [
+            './src/ProjectList.tsx'
+        ],
+        task_list: [
+            './src/TaskList.tsx'
+        ]
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        //filename: 'js/[name].bundle.js'
-        filename: 'js/bundle.js'
+        filename: 'js/[name].bundle.js'
     },
     devtool: 'source-map',
     resolve: {
@@ -45,7 +49,18 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({ 
             template: path.resolve(__dirname, 'src', 'index.html'),
-            filename: 'index.html'
+            filename: 'index.html',
+            chunks: ['app']
+        }),
+        new HtmlWebpackPlugin({ 
+            template: path.resolve(__dirname, 'src', 'project_list.html'),
+            filename: 'project_list.html',
+            chunks: ['project_list']
+        }),
+        new HtmlWebpackPlugin({ 
+            template: path.resolve(__dirname, 'src', 'task_list.html'),
+            filename: 'task_list.html',
+            chunks: ['task_list']
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin()

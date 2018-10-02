@@ -4,7 +4,7 @@ const
     webpack = require('webpack'),
     webpackConfig = require('./webpack.config.js'),
     app = express(),
-    port = process.env.PORT || 3000;
+    port = process.env.PORT || 8080;
 
 app.listen(port, () => { console.log(`App is listening on port ${port}`) });
 
