@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "lib": ["es6", "dom"],
         "allowSyntheticDefaultImports": true,
         "jsx": "react",
         "module": "commonjs",

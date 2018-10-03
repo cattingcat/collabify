@@ -15,6 +15,13 @@ module.exports = {
         ],
         task_list: [
             './src/TaskList.tsx'
+        ],
+        main: [
+            './src/app/mvp/main/Main.ts'
+        ],
+
+        SpaceListModule: [
+            './src/app/mvp/space_list/SpaceListModule.ts'
         ]
     },
     output: {
@@ -47,6 +54,12 @@ module.exports = {
         ]
     },
     plugins: [
+        new HtmlWebpackPlugin({ 
+            template: path.resolve(__dirname, 'src', 'index.html'),
+            filename: 'index.html',
+            chunks: ['main']
+        }),
+
         new HtmlWebpackPlugin({ 
             template: path.resolve(__dirname, 'src', 'demo.html'),
             filename: 'demo.html',

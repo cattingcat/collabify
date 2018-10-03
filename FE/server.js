@@ -8,6 +8,11 @@ const
 
 app.listen(port, () => { console.log(`App is listening on port ${port}`) });
 
+app.get('/ajax-test', (req, res) => {
+    res.write('ajax-test');
+    res.end();
+ });
+
 app.get('/', (req, res) => {
    res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
 });
