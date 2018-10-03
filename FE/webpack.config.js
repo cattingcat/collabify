@@ -6,8 +6,8 @@ const
 module.exports = {
     mode: "development",
     entry: {
-        app: [
-            './src/App.tsx', 
+        demo: [
+            './src/Demo.tsx', 
             'webpack-hot-middleware/client'
         ],
         project_list: [
@@ -48,9 +48,9 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({ 
-            template: path.resolve(__dirname, 'src', 'index.html'),
-            filename: 'index.html',
-            chunks: ['app']
+            template: path.resolve(__dirname, 'src', 'demo.html'),
+            filename: 'demo.html',
+            chunks: ['demo']
         }),
         new HtmlWebpackPlugin({ 
             template: path.resolve(__dirname, 'src', 'project_list.html'),
