@@ -1,7 +1,12 @@
 const 
     path = require('path'),
     webpack = require('webpack'),
-    HtmlWebpackPlugin = require('html-webpack-plugin');
+    HtmlWebpackPlugin = require('html-webpack-plugin'),
+    CopyWebpackPlugin = require('copy-webpack-plugin');
+
+const output = path.resolve(__dirname, 'dist');
+const serviceWorker = path.resolve(__dirname, 'src', 'infrastructure', 'ServiceWorker.js');
+const jsOutput = path.resolve(output, 'js');
 
 module.exports = {
     mode: "development",
@@ -18,7 +23,7 @@ module.exports = {
         ]
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: output,
         filename: 'js/[name].bundle.js'
     },
     devtool: 'source-map',
@@ -61,6 +66,11 @@ module.exports = {
             chunks: ['main']
         }),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoEmitOnErrorsPlugin()
+        new webpack.NoEmitOnErrorsPlugin(),
+        new CopyWebpackPlugin([{
+            from: serviceWorker,
+            to: path.resolve(jsOutput, 'sw.js'),
+            toType: 'file'
+        }], {copyUnmodified: true})
     ]
 }
