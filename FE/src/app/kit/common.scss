@@ -1,18 +1,49 @@
-$green: green;
-$darkGreen: rgb(7, 63, 7);
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import './variables';
 
-$cian: #49c5b6;
-$darkCian: #42AB9E;
+html {
+    font-family: -apple-system, BlinkMacSystemFont, "Raleway", "apercu", sans-serif;
+    padding: 0;
+    font-size: 14px;
+    color: $black;
+}
 
-$red: red;
-$darkRed: rgb(128, 4, 4);
+body {
+    background: linear-gradient(to right, #fafafa, #f4f7f6);
+}
 
-$lightGray: #f1f1f1;
-$gray: #748088;
-$black: #202121;
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 200;
+}
 
-$blue: #50ABC6;
+a {
+    color: $cian;
+    text-decoration: none;
+    transition: $transition;
 
-$white: #fff;
+    &:visited {
+        color: $darkCian;
+    }
 
-$transition: all 0.3s ease-in-out;
+    &:hover {
+        color: $black;
+    }
+}
+
+input {
+    outline: none;
+    border: none;
+    border-bottom: solid $gray 1px;
+    background: transparent;
+    transition: $transition;
+    font-size: 1.1em;
+
+    &:focus {
+        border-bottom: solid $cian 1px;
+    }
+
+    &::placeholder {
+        font-size: 0.9em;
+        color: $gray;
+    }
+}

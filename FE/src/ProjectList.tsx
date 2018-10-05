@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { ComponentsDemo } from './app/kit/Demo';
-import './main.scss';
+import { KitDemo } from './app/kit/demo/KitDemo';
+//import './main.scss';
 
-const componentsDemo = <ComponentsDemo />
+const componentsDemo = <KitDemo />
     
 const root = document.getElementById('root');
 

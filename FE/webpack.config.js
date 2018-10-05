@@ -6,10 +6,6 @@ const
 module.exports = {
     mode: "development",
     entry: {
-        demo: [
-            './src/Demo.tsx', 
-            'webpack-hot-middleware/client'
-        ],
         project_list: [
             './src/ProjectList.tsx'
         ],
@@ -22,6 +18,9 @@ module.exports = {
 
         SpaceListModule: [
             './src/app/mvp/space_list/SpaceListModule.ts'
+        ],
+        ComponentDemoModule: [
+            './src/app/mvp/component_demo/ComponentDemoModule.ts'
         ]
     },
     output: {
@@ -60,11 +59,6 @@ module.exports = {
             chunks: ['main']
         }),
 
-        new HtmlWebpackPlugin({ 
-            template: path.resolve(__dirname, 'src', 'demo.html'),
-            filename: 'demo.html',
-            chunks: ['demo']
-        }),
         new HtmlWebpackPlugin({ 
             template: path.resolve(__dirname, 'src', 'project_list.html'),
             filename: 'project_list.html',
