@@ -6,12 +6,6 @@ const
 module.exports = {
     mode: "development",
     entry: {
-        project_list: [
-            './src/ProjectList.tsx'
-        ],
-        task_list: [
-            './src/TaskList.tsx'
-        ],
         main: [
             './src/app/mvp/main/Main.ts'
         ],
@@ -29,7 +23,15 @@ module.exports = {
     },
     devtool: 'source-map',
     resolve: {
-        extensions: ['.js', '.jsx', '.json', '.ts', '.tsx']
+        extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
+        alias: {
+            "common": path.resolve(__dirname, 'src', 'app', 'common'),
+            "components": path.resolve(__dirname, 'src', 'app', 'components'),
+            "container": path.resolve(__dirname, 'src', 'app', 'container'),
+            "container_services": path.resolve(__dirname, 'src', 'app', 'container_services'),
+            "kit": path.resolve(__dirname, 'src', 'app', 'kit'),
+            "mvp": path.resolve(__dirname, 'src', 'app', 'mvp')
+        }
     },
     module: {
         rules: [
@@ -57,17 +59,6 @@ module.exports = {
             template: path.resolve(__dirname, 'src', 'index.html'),
             filename: 'index.html',
             chunks: ['main']
-        }),
-
-        new HtmlWebpackPlugin({ 
-            template: path.resolve(__dirname, 'src', 'project_list.html'),
-            filename: 'project_list.html',
-            chunks: ['project_list']
-        }),
-        new HtmlWebpackPlugin({ 
-            template: path.resolve(__dirname, 'src', 'task_list.html'),
-            filename: 'task_list.html',
-            chunks: ['task_list']
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin()

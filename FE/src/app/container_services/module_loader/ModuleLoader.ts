@@ -1,6 +1,5 @@
-import { IModule } from "../../container/IModule";
+import { IModule } from "container/IModule";
 import { AssertionError } from "assert";
-import { resolve } from "path";
 
 /// Loads JS-modules for independent apps
 export class ModuleLoader {

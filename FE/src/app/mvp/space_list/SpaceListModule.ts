@@ -1,4 +1,4 @@
-import { IModule } from "../../container/IModule";
+import { IModule } from "container/IModule";
 
 class SpaceListModule implements IModule {
 

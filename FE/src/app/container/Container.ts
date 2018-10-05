@@ -1,6 +1,5 @@
 import { IModule } from "./IModule";
-import { ModuleLoader } from "../container_services/module_loader/ModuleLoader";
-import { MessageBus } from "../container_services/bus/MessageBus";
+import { MessageBus, ModuleLoader } from "container_services";
 
 /// Container should provide common services for all independent apps
 export class Container {

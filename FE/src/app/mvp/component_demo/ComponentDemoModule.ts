@@ -1,5 +1,5 @@
 import * as ReactDOM from 'react-dom';
-import { IModule } from "../../container/IModule";
+import { IModule } from "container/IModule";
 import { componentsDemo } from './ComponentDemo';
 
 class ComponentDemoModule implements IModule {
