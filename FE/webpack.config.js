@@ -69,7 +69,7 @@ module.exports = {
         new webpack.NoEmitOnErrorsPlugin(),
         new CopyWebpackPlugin([{
             from: serviceWorker,
-            to: path.resolve(jsOutput, 'sw.js'),
+            to: path.resolve(output, 'sw.js'),
             toType: 'file'
         }], {copyUnmodified: true})
     ]

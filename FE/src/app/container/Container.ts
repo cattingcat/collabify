@@ -1,28 +1,35 @@
-import { IModule } from "./IModule";
-import { MessageBus, ModuleLoader } from "container_services";
+import { Module } from "container/Module";
+import { MessageBus, ModuleLoader, NotificationServiceImpl } from "container_services";
+import { ServiceWorkerService } from "container/ServiceWorkerService";
+import { ContainerContext } from "container/ContainerContext";
+import { moduleRouting } from "container/ModuleRouting";
 
 /// Container should provide common services for all independent apps
 export class Container {
-    private readonly moduleLoader: ModuleLoader = new ModuleLoader();
-    private readonly bus: MessageBus = new MessageBus();
+    private readonly swService     = new ServiceWorkerService();
+    private readonly moduleLoader  = new ModuleLoader();
+    private readonly bus           = new MessageBus();
+    private readonly notifications = new NotificationServiceImpl();
 
     private readonly _window: Window = window;
-    private _currentModule: IModule = new EmptyModule();
+    private _currentModule: Module = new EmptyModule();
+    private _containerContext: ContainerContext;
 
-    public run(): void {
+    public async run(): Promise<void> {
+        const reg = await this.swService.register();
+        await this.notifications.setup();
+
         const ref = this._window.location.href;
         const body = this._window.document.body;
         
+        this._window.addEventListener('hashchange', (e) => this._handleHashChange());
+        this._containerContext = new ContainerContext(this.bus, this.notifications);
 
-        this._window.onhashchange = (e) => {
-            console.log(e);
-        }
-
-        this.runRootModule('ComponentDemoModule');
+        this._handleHashChange();
     }
 
 
-    private async runRootModule(name: string): Promise<void> {
+    private async _runRootModule(name: string): Promise<void> {
         const rootElement = this._window.document.body.querySelector('#root');
 
         await this.moduleLoader.loadModule(name);
@@ -30,11 +37,27 @@ export class Container {
 
         this._currentModule.destroy();
         this._currentModule = module;
+        this._currentModule.setContext(this._containerContext);
         this._currentModule.run(rootElement);
+    }
+
+    private _handleHashChange(): void {
+        const hash = this._window.location.hash;
+        const parts = hash.replace('#', '').split('/').filter((i) => i != '');
+        const mainPart = parts[0] || '';
+        const moduleName = moduleRouting[mainPart];
+
+        if(moduleName == null) {
+            const defaultModule = moduleRouting[''];
+            this._runRootModule(defaultModule);
+        } else {
+            this._runRootModule(moduleName);
+        }
     }
 }
 
-class EmptyModule implements IModule {
+class EmptyModule implements Module {
+    setContext(context: ContainerContext): void { }
     run(hostElement: Element): void { }   
     destroy(): void { }
 }
