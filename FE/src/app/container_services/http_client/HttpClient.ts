@@ -1,19 +1,41 @@
+import { HttpRequest } from "./HttpRequest";
+import { HttpResponse } from "./HttpResponse";
+
 export class HttpClient {
 
-    send(url: string) : string {
-        let request = new XMLHttpRequest();
+    postAsync(request: HttpRequest): Promise<HttpResponse> {
+        //TODO: обработка того, что реквест null
 
-        request.open('GET', url, false);
-        request.setRequestHeader("Content-Type", "application/x-www-form-undercoded");
+        if (request == null)
+            return;
 
-        request.send("foo=bar&lorem=ipsum");
+        return new Promise<HttpResponse>((resolve, reject) => {
 
-        return request.getAllResponseHeaders();
+            const xhr = new XMLHttpRequest();
+
+            xhr.open('POST', request.url, true);
+            request.header.forEach((key, value) => {
+                xhr.setRequestHeader(key, value);
+            });
+
+            xhr.onload = function () {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    resolve(new HttpResponse(xhr.responseText));
+                } else {
+                    reject(xhr.statusText);
+                }
+            };
+
+            xhr.onerror = function () {
+                reject(xhr.statusText);
+            }
+        });
     }
 
-    postAsync(url: string) : string {
-        let request = new XMLHttpRequest();
+    //TODO: impl
+    getAsync(request: HttpRequest) : Promise<HttpResponse> {
+        return new Promise<HttpResponse>(() => {
 
-        return request.response;
+        });
     }
 }
