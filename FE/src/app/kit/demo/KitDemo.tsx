@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { ButtonDemo } from '../button/demo/ButtonDemo';
-import { TypoDemo } from '../typo/demo/TypoDemo';
+import { ButtonDemo } from 'kit/button/demo/ButtonDemo';
+import { TypoDemo } from 'kit/typo/demo/TypoDemo';
 import "./kit_demo.scss";
 import { HttpClient } from '../../container_services/http_client/HttpClient';
 

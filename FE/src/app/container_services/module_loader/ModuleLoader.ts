@@ -1,10 +1,9 @@
-import { IModule } from "../../container/IModule";
+import { Module } from "container/Module";
 import { AssertionError } from "assert";
-import { resolve } from "path";
 
 /// Loads JS-modules for independent apps
 export class ModuleLoader {
-    private readonly _modules: {[name: string] : IModule} = {};
+    private readonly _modules: {[name: string] : Module} = {};
     private readonly _window: Window = window;
     
     constructor() {
@@ -30,7 +29,7 @@ export class ModuleLoader {
         return promise;
     }
 
-    public getModule(name: string): IModule {
+    public getModule(name: string): Module {
         const module = this._modules[name];
 
         if(module == null) throw new AssertionError({message: 'Module should be loaded'});

@@ -1,15 +1,15 @@
+import { Module, ContainerContext } from "container/Module";
 import * as ReactDOM from 'react-dom';
-import { IModule } from "../../container/IModule";
 import { componentsDemo } from './ComponentDemo';
 
-class ComponentDemoModule implements IModule {
+class ComponentDemoModule implements Module {
+    setContext(context: ContainerContext): void { }
+
     run(hostElement: Element): void {
         ReactDOM.render(componentsDemo, hostElement);
     }
 
-    destroy(): void {
-        
-    }
+    destroy(): void { }
 }
 
 (window as any).modules.ComponentDemoModule = new ComponentDemoModule();
