@@ -15,8 +15,8 @@ module.exports = {
             './src/app/mvp/main/Main.ts'
         ],
 
-        SpaceListModule: [
-            './src/app/mvp/space_list/SpaceListModule.ts'
+        SpaceModule: [
+            './src/app/mvp/space/SpaceModule.ts'
         ],
         ComponentDemoModule: [
             './src/app/mvp/component_demo/ComponentDemoModule.ts'
@@ -28,14 +28,15 @@ module.exports = {
     },
     devtool: 'source-map',
     resolve: {
-        extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
+        extensions: ['.js', '.jsx', '.json', '.ts', '.tsx', '.scss'],
         alias: {
-            "common": path.resolve(__dirname, 'src', 'app', 'common'),
-            "components": path.resolve(__dirname, 'src', 'app', 'components'),
-            "container": path.resolve(__dirname, 'src', 'app', 'container'),
-            "container_services": path.resolve(__dirname, 'src', 'app', 'container_services'),
-            "kit": path.resolve(__dirname, 'src', 'app', 'kit'),
-            "mvp": path.resolve(__dirname, 'src', 'app', 'mvp')
+            'common': path.resolve(__dirname, 'src', 'app', 'common'),
+            'components': path.resolve(__dirname, 'src', 'app', 'components'),
+            'container': path.resolve(__dirname, 'src', 'app', 'container'),
+            'container_services': path.resolve(__dirname, 'src', 'app', 'container_services'),
+            'kit': path.resolve(__dirname, 'src', 'app', 'kit'),
+            'mvp': path.resolve(__dirname, 'src', 'app', 'mvp'),
+            'domain': path.resolve(__dirname, 'src', 'app', 'domain'),
         }
     },
     module: {

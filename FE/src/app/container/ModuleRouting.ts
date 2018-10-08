@@ -1,3 +1,4 @@
 export const moduleRouting: {[key: string]: string} = {
-    '': 'ComponentDemoModule'
+    '': 'ComponentDemoModule',
+    'space': 'SpaceModule'
 }

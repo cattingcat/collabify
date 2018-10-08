@@ -12,6 +12,11 @@ app.get('/ajax-test', (req, res) => {
     res.write('ajax-test');
     res.end();
  });
+ app.post('/ajax-test-post', (req, res) => {
+    res.setHeader('Content-type', 'application/json');
+    res.write('{"a": 1, "b": 2}');
+    res.end();
+ })
 
 app.get('/', (req, res) => {
    res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
