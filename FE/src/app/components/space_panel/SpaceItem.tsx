@@ -1,23 +1,19 @@
 import * as React from 'react';
 import { SpaceModel } from 'components/space_panel/SpaceModel';
 import { AvatarImage } from 'kit/avatar/AvatarImage';
-//import './space.scss'; // See styles in main.scss
+import './space_item.scss';
+
+export interface SpaceItemModel {
+    readonly model: SpaceModel;
+}
 
 export class SpaceItem extends React.Component<SpaceItemModel> {
-    constructor(props: Readonly<SpaceItemModel>) {
-        super(props);
-
-        console.log(props);
-    }
-
     render(): JSX.Element {
         return <div className='space-item'>
             <AvatarImage></AvatarImage>
-            {this.props.model.name}
+            <div className="space-name">
+                {this.props.model.name}
+            </div>
         </div>
     }
-}
-
-export interface SpaceItemModel {
-    model: SpaceModel;
 }

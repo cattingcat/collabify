@@ -26,13 +26,14 @@ const testProps: SpacePanelProps = {
 }
 
 
-
+export interface SpacePanelProps {
+    readonly models: Array<SpaceModel>;
+    readonly className: string;
+}
 
 export class SpacePanel extends React.Component<SpacePanelProps> {
-    constructor(props?: Readonly<SpacePanelProps>) {
-        super(props);
-    }
-
+    static readonly defaultProps: SpacePanelProps = testProps;
+    
     render(): JSX.Element {
         const spaceItems = this.props.models.map((m) => {
             return <SpaceItem key={m.id.value} model={m}></SpaceItem>
@@ -42,12 +43,5 @@ export class SpacePanel extends React.Component<SpacePanelProps> {
         return <div className={classes}>
             {spaceItems}
         </div>
-    }
-
-    static defaultProps: SpacePanelProps = testProps;
-}
-
-export interface SpacePanelProps {
-    models: Array<SpaceModel>;
-    className: string;
+    }    
 }

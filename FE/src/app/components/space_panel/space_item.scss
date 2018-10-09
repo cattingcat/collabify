@@ -1,0 +1,16 @@
+.space-item {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: 8px;
+
+    .space-name {
+        flex-grow: 1;
+        padding: 5px;
+    }
+
+    &:hover {
+        .avatar-image img {
+            border-radius: 17%;
+        }
+    }
+}
