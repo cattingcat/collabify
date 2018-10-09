@@ -31,17 +31,40 @@ export interface SpacePanelProps {
     readonly className: string;
 }
 
-export class SpacePanel extends React.Component<SpacePanelProps> {
+export interface SpacePanelState {
+    showInfos: boolean;
+}
+
+export class SpacePanel extends React.Component<SpacePanelProps, SpacePanelState> {
     static readonly defaultProps: SpacePanelProps = testProps;
+
+    constructor(props: SpacePanelProps) {
+        super(props);
+        this.state = {
+            showInfos: true
+        };
+    }
+    
     
     render(): JSX.Element {
         const spaceItems = this.props.models.map((m) => {
-            return <SpaceItem key={m.id.value} model={m}></SpaceItem>
+            return <SpaceItem 
+                key={m.id.value} 
+                model={m} 
+                showInfo={this.state.showInfos}>
+            </SpaceItem>
         });
 
         const classes = `space-panel ${this.props.className}`;
         return <div className={classes}>
             {spaceItems}
+            <button onClick={this._handleClick.bind(this)}>test</button>
         </div>
-    }    
+    }
+
+    _handleClick(): void {
+        this.setState({
+            showInfos: !this.state.showInfos
+        });
+    }
 }
