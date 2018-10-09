@@ -6,6 +6,9 @@ import './space_item.scss';
 export interface SpaceItemModel {
     readonly model: SpaceModel;
     readonly showInfo: boolean;
+    readonly isSelected?: boolean;
+    readonly className?: string
+    readonly onClick?: () => void;
 }
 
 export class SpaceItem extends React.Component<SpaceItemModel> {
@@ -17,8 +20,14 @@ export class SpaceItem extends React.Component<SpaceItemModel> {
             </div>;
         }
 
-        return <div className='space-item'>
-            <AvatarImage className='space-logo'></AvatarImage>
+        const isSelected = this.props.isSelected;
+        const selectedClass = isSelected ? 'selected' : '';
+        const classNames = `space-item ${this.props.className} ${selectedClass}`;
+        return <div className={classNames} onClick={this.props.onClick}>
+            <AvatarImage 
+                size='medium'
+                imgSrc={this.props.model.logoUri}
+                className='space-logo'></AvatarImage>
             {description}   
         </div>
     }

@@ -1,3 +1,1 @@
-export class SpaceId {
-    constructor(readonly value: number) { }
-}
+export type SpaceId = number;

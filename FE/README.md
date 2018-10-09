@@ -1,4 +1,4 @@
-#Kit
+#App
 
 ```
     npm run start

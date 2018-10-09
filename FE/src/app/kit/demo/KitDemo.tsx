@@ -3,6 +3,7 @@ import { ButtonDemo } from 'kit/button/demo/ButtonDemo';
 import { TypoDemo } from 'kit/typo/demo/TypoDemo';
 import "./kit_demo.scss";
 import { HttpRequest, HttpResponse, HttpClient } from 'container_services/http_client/HttpClient';
+import { ListDemo } from 'components/list/ListDemo';
 
 export class KitDemo extends React.Component {
     render(): JSX.Element {
@@ -10,6 +11,7 @@ export class KitDemo extends React.Component {
         return <div>
             <TypoDemo />
             <ButtonDemo />
+            <ListDemo />
             <button onClick={this.btnClick}>Text</button>
         </div>
     }

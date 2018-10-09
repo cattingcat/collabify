@@ -1,22 +1,46 @@
 @import 'kit/variables';
 
+$panelBg: $black;
+$panelTextColor: $lightGray;
+
+$hoverItemBg: $darkGray;
+$hoverItemTextColor: $lightGray;
+
+$selectedItemBg: $white;
+$selectedItemTextColor: $white;
+
+$minPanelWidth: 66px;
+$maxPanelWidht: 200px;
+
 .space-panel {
-    background: $black;
-    color: $lightGray;
+    background: $panelBg;
+    color: $panelTextColor;
+
     padding: 5px;
-    max-width: 200px;
-    min-width: 60px;
+    max-width: $maxPanelWidht;
+    min-width: $minPanelWidth;
     overflow: hidden;
 
-    width: 60px;
+    width: $minPanelWidth;
 
-    transition: all .2s;
+    transition: $transition;
     
-    .selected {
-        color: $white;
+    &.expanded {
+        width: $maxPanelWidht;
+
+        .space-item:hover {
+            background: $hoverItemBg;
+            color: $hoverItemTextColor;
+        }
     }
 
-    &.expanded {
-        width: 200px;
+    .space-item {
+        transition: $transition;
+        cursor: pointer;
+
+        &.selected {
+            //background: $selectedItemBg;
+            color: $selectedItemTextColor;
+        }
     }
 }
