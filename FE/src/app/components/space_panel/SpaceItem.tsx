@@ -12,13 +12,13 @@ export class SpaceItem extends React.Component<SpaceItemModel> {
     render(): JSX.Element {
         let description = null;
         if(this.props.showInfo) {
-            description = <div className="space-name">
+            description = <div className='space-name'>
                 {this.props.model.name}
             </div>;
         }
 
         return <div className='space-item'>
-            <AvatarImage></AvatarImage>
+            <AvatarImage className='space-logo'></AvatarImage>
             {description}   
         </div>
     }

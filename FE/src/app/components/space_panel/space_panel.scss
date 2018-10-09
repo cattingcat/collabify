@@ -4,8 +4,19 @@
     background: $black;
     color: $lightGray;
     padding: 5px;
+    max-width: 200px;
+    min-width: 60px;
+    overflow: hidden;
+
+    width: 60px;
+
+    transition: all .2s;
     
     .selected {
         color: $white;
+    }
+
+    &.expanded {
+        width: 200px;
     }
 }

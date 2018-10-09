@@ -55,7 +55,8 @@ export class SpacePanel extends React.Component<SpacePanelProps, SpacePanelState
             </SpaceItem>
         });
 
-        const classes = `space-panel ${this.props.className}`;
+        const closeClass = this.state.showInfos ? 'expanded' : ''; 
+        const classes = `space-panel ${this.props.className} ${closeClass}`;
         return <div className={classes}>
             {spaceItems}
             <button onClick={this._handleClick.bind(this)}>test</button>

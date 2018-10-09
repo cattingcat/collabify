@@ -7,7 +7,7 @@ import { SpaceModel } from 'components/space_panel/SpaceModel';
 export class Space extends React.Component {
     render(): JSX.Element {
         return <div className='space'>
-            <div className='column'> 
+            <div> 
                 <SpacePanel className="space-panel"></SpacePanel>
             </div>
             <div className='column'> 2 </div>

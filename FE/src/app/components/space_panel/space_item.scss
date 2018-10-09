@@ -3,6 +3,10 @@
     flex-flow: row nowrap;
     margin-bottom: 8px;
 
+    .space-logo {
+        min-width: 60px;
+    }
+    
     .space-name {
         flex-grow: 1;
         padding: 5px;

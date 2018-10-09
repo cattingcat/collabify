@@ -3,12 +3,9 @@
 .space {
     display: flex;
     height: 100%;
-    
     background: $blue;
-    
     flex-flow: row nowrap;
     align-items: stretch;
-
 
     .column {
         flex-grow: 1;
