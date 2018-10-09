@@ -8,27 +8,15 @@ const
 
 app.listen(port, () => { console.log(`App is listening on port ${port}`) });
 
-app.get('/ajax-test', (req, res) => {
-    res.write('ajax-test');
-    res.end();
- });
- app.post('/ajax-test-post', (req, res) => {
-    res.setHeader('Content-type', 'application/json');
-    res.write('{"a": 1, "b": 2}');
-    res.end();
- })
-
 app.get('/', (req, res) => {
    res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
 });
 
-let compiler = webpack(webpackConfig);
+const compiler = webpack(webpackConfig);
 
 app.use(require('webpack-dev-middleware')(compiler, {
    noInfo: true, publicPath: webpackConfig.output.publicPath, stats:    { colors: true }
 }));
 
 app.use(require('webpack-hot-middleware')(compiler));
-
-//app.use(express.static(path.resolve(__dirname, 'dist')));
 app.use(express.static(__dirname + '/dist'));

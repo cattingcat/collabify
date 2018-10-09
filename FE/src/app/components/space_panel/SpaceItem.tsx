@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { SpaceModel } from 'components/space_panel/SpaceModel';
+import { AvatarImage } from 'kit/avatar/AvatarImage';
 //import './space.scss'; // See styles in main.scss
 
 export class SpaceItem extends React.Component<SpaceItemModel> {
@@ -11,6 +12,7 @@ export class SpaceItem extends React.Component<SpaceItemModel> {
 
     render(): JSX.Element {
         return <div className='space-item'>
+            <AvatarImage></AvatarImage>
             {this.props.model.name}
         </div>
     }

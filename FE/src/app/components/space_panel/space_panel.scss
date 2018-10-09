@@ -1,6 +1,10 @@
 @import 'kit/variables';
 
 .space-panel {
-
     background: $black;
+    color: $lightGray;
+    
+    .selected {
+        color: $white;
+    }
 }
