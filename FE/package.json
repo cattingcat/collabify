@@ -9,8 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/webpack",
-    "start": "npm run build && node server.js && open http://localhost:8080/"
+    "watch": "./node_modules/.bin/webpack"
   },
   "keywords": [],
   "author": "",
@@ -43,8 +42,6 @@
     "ts-loader": "^5.2.1",
     "typescript": "^3.1.0",
     "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-middleware": "^3.4.0",
-    "webpack-hot-middleware": "^2.24.3"
+    "webpack-cli": "^3.1.2"
   }
 }

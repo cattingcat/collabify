@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { SpaceItem } from 'components/space_panel/SpaceItem';
+import { SpaceItem } from 'components/space_panel/space_item/SpaceItem';
 import { SpaceModel } from 'components/space_panel/SpaceModel';
 import './space_panel.scss';
 import { SpaceId } from 'domain/Space';

@@ -8,6 +8,10 @@ export interface ListProps {
 
 export class List extends React.Component<ListProps> {
     render(): JSX.Element { 
-        return <span>Hello world!</span>
+        const elements = this.props.models.map((i) => <div>1111 --- {i}</div>);
+        return <div>
+            {elements}
+            <span>Hello world!</span>
+        </div>;
     }
 }

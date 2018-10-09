@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './space.scss';
-import { SpacePanel, SpacePanelProps } from 'components/space_panel/SpacePanel';
+import { SpacePanel, SpacePanelProps } from 'components/space_panel/space_panel/SpacePanel';
 import { SpaceId } from 'domain/Space';
 import { SpaceModel } from 'components/space_panel/SpaceModel';
 

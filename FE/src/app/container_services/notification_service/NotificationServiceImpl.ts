@@ -5,13 +5,11 @@ const _granted = 'granted';
 export class NotificationServiceImpl implements NotificationService {
     async setup(): Promise<void> {
         if (Notification.permission == _granted) {
-            //const notification = new Notification("already granted");
-            this.showNotification("already granted");
+            //this.showNotification("already granted");
         } else if (Notification.permission != "denied") {
             const permission = await Notification.requestPermission();
             
             if (permission == _granted) {
-                //const welcomeNotification = new Notification("Hi there!");
                 this.showNotification('Hi there!');
             }
         }

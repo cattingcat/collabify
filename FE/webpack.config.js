@@ -4,12 +4,13 @@ const
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const output = path.resolve(__dirname, 'dist');
+const output        = path.resolve(__dirname, '../BE/Collabify/WebApplication/wwwroot');
 const serviceWorker = path.resolve(__dirname, 'src', 'infrastructure', 'ServiceWorker.js');
-const jsOutput = path.resolve(output, 'js');
+const jsOutput      = path.resolve(output, 'js');
 
 module.exports = {
     mode: "development",
+    watch: true,
     entry: {
         main: [
             './src/app/mvp/main/Main.ts'
@@ -30,13 +31,13 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx', '.json', '.ts', '.tsx', '.scss'],
         alias: {
-            'common': path.resolve(__dirname, 'src', 'app', 'common'),
-            'components': path.resolve(__dirname, 'src', 'app', 'components'),
-            'container': path.resolve(__dirname, 'src', 'app', 'container'),
-            'container_services': path.resolve(__dirname, 'src', 'app', 'container_services'),
-            'kit': path.resolve(__dirname, 'src', 'app', 'kit'),
-            'mvp': path.resolve(__dirname, 'src', 'app', 'mvp'),
-            'domain': path.resolve(__dirname, 'src', 'app', 'domain'),
+            'common':               path.resolve(__dirname, 'src', 'app', 'common'),
+            'components':           path.resolve(__dirname, 'src', 'app', 'components'),
+            'container':            path.resolve(__dirname, 'src', 'app', 'container'),
+            'container_services':   path.resolve(__dirname, 'src', 'app', 'container_services'),
+            'kit':                  path.resolve(__dirname, 'src', 'app', 'kit'),
+            'mvp':                  path.resolve(__dirname, 'src', 'app', 'mvp'),
+            'domain':               path.resolve(__dirname, 'src', 'app', 'domain'),
         }
     },
     module: {

@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collabify.ConsoleApp", "Collabify.ConsoleApp\Collabify.ConsoleApp.csproj", "{93DF803C-207E-4C24-9F50-882AA2B0F696}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dal", "Dal", "{0F8F800A-DE02-46E7-B725-C3C185E7FD33}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{CBCF07D0-51DF-4FA2-93AC-A1E42C97A57E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{68807DAB-A4FD-4B50-8220-C9EEB92473A4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bl", "Bl", "{6687FDC0-409B-4076-876B-CA86AE6709F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication", "WebApplication\WebApplication.csproj", "{B1023009-1201-45ED-9B7A-DA6128A1D85C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93DF803C-207E-4C24-9F50-882AA2B0F696}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93DF803C-207E-4C24-9F50-882AA2B0F696}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93DF803C-207E-4C24-9F50-882AA2B0F696}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93DF803C-207E-4C24-9F50-882AA2B0F696}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1023009-1201-45ED-9B7A-DA6128A1D85C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1023009-1201-45ED-9B7A-DA6128A1D85C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1023009-1201-45ED-9B7A-DA6128A1D85C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1023009-1201-45ED-9B7A-DA6128A1D85C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B1023009-1201-45ED-9B7A-DA6128A1D85C} = {CBCF07D0-51DF-4FA2-93AC-A1E42C97A57E}
+	EndGlobalSection
+EndGlobal

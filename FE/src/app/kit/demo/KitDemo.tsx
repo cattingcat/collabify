@@ -12,11 +12,11 @@ export class KitDemo extends React.Component {
             <TypoDemo />
             <ButtonDemo />
             <ListDemo />
-            <button onClick={this.btnClick}>Text</button>
+            <button onClick={this.btnClick}>Send request</button>
         </div>
     }
 
-    async btnClick(){
+    async btnClick() {
         const client = new HttpClient();
         const header = new Map<string, string>();
         const json : string = `{
