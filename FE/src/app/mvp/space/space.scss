@@ -3,15 +3,51 @@
 .space {
     display: flex;
     height: 100%;
-    background: $blue;
+    background: $lightGray;
     flex-flow: row nowrap;
     align-items: stretch;
 
     .column {
         flex-grow: 1;
+        height: 100%;
+    }
+    
+    .main-panel-container {
+        padding: 7px;
+        box-sizing: border-box;
     }
 
-    .space-panel {
+    .side-panel {
         height: 100%;
+    }
+
+    .space-view {
+        height: 100%;
+        background: $white;
+        box-shadow: 0px 0px 3px 0px $gray;
+
+        .header {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+
+            padding: 5px 10px;
+            border-bottom: solid 1px $lightGray;
+
+            // .left {
+            // }
+
+            // .rigth {
+            // }
+
+            h2.title {
+                display: inline-block;
+                margin: 0;
+            }
+
+
+        }
+
+        
     }
 }

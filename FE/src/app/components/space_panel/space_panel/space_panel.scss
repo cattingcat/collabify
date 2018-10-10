@@ -1,7 +1,8 @@
 @import 'kit/variables';
 
-$panelBg: $black;
-$panelTextColor: $lightGray;
+$panelBg: $white;
+$panelTextColor: $black;
+
 
 $hoverItemBg: $darkGray;
 $hoverItemTextColor: $lightGray;
@@ -9,17 +10,19 @@ $hoverItemTextColor: $lightGray;
 $selectedItemBg: $white;
 $selectedItemTextColor: $white;
 
-$minPanelWidth: 66px;
+
+$minPanelWidth: $szSmall + 3px + 6px;
 $maxPanelWidht: 200px;
 
 .space-panel {
-    background: $panelBg;
+    //background: $panelBg;
     color: $panelTextColor;
 
-    padding: 5px;
+    padding: 10px 6px 5px 0px;
     max-width: $maxPanelWidht;
     min-width: $minPanelWidth;
     overflow: hidden;
+    box-sizing: border-box;
 
     width: $minPanelWidth;
 
@@ -29,8 +32,8 @@ $maxPanelWidht: 200px;
         width: $maxPanelWidht;
 
         .space-item:hover {
-            background: $hoverItemBg;
-            color: $hoverItemTextColor;
+            //background: $hoverItemBg;
+            color: rgb(173, 173, 173);
         }
     }
 
@@ -40,7 +43,7 @@ $maxPanelWidht: 200px;
 
         &.selected {
             //background: $selectedItemBg;
-            color: $selectedItemTextColor;
+            //color: $selectedItemTextColor;
         }
     }
 }

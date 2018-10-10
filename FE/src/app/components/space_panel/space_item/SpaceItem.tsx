@@ -13,22 +13,20 @@ export interface SpaceItemModel {
 
 export class SpaceItem extends React.Component<SpaceItemModel> {
     render(): JSX.Element {
-        let description = null;
-        if(this.props.showInfo) {
-            description = <div className='space-name'>
-                {this.props.model.name}
-            </div>;
-        }
-
+        const spaceItemClasses = this.props.showInfo ? '' : 'hidden';
         const isSelected = this.props.isSelected;
         const selectedClass = isSelected ? 'selected' : '';
         const classNames = `space-item ${this.props.className} ${selectedClass}`;
+        
         return <div className={classNames} onClick={this.props.onClick}>
             <AvatarImage 
-                size='medium'
+                size='small'
                 imgSrc={this.props.model.logoUri}
-                className='space-logo'></AvatarImage>
-            {description}   
+                className='space-logo'>
+            </AvatarImage>
+            <div className={`space-name ${spaceItemClasses}`}>
+                {this.props.model.name}
+            </div>
         </div>
     }
 }

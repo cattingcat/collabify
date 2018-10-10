@@ -1,0 +1,14 @@
+@import 'kit/variables';
+
+.icon-button {
+    background-image: url('/icons/error.svg');
+    background-repeat: no-repeat;
+
+    //background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: $szSmall / 2;
+    font-size: 16px;
+    cursor: pointer; 
+    outline: none;
+}

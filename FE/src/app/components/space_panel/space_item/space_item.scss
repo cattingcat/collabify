@@ -1,20 +1,26 @@
 @import 'kit/variables';
 
+$borderW: 3px;
 .space-item {
     display: flex;
     flex-flow: row nowrap;
     margin-bottom: 8px;
-    border-left: solid transparent 3px;
-    padding-left: 3px;
+    border-left: solid transparent $borderW;
+    padding-left: $borderW;
     box-sizing: border-box;
 
     .space-logo {
-        min-width: 60px;
+        min-width: $szSmall + $borderW;
     }
     
     .space-name {
         flex-grow: 1;
         padding: 5px;
+        transition: $transition;
+        
+        &.hidden {
+            opacity: 0;
+        }
     }
 
     &:hover {
@@ -24,7 +30,7 @@
     }
 
     &.selected {
-        border-left: solid $lightGray 3px;
+        border-left: solid #359ee4 3px;
 
         .avatar-image img {
             border-radius: 20%;

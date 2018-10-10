@@ -6,6 +6,7 @@ const
 
 const output        = path.resolve(__dirname, '../BE/Collabify/WebApplication/wwwroot');
 const serviceWorker = path.resolve(__dirname, 'src', 'infrastructure', 'ServiceWorker.js');
+const icons = path.resolve(__dirname, 'src', 'icons');
 const jsOutput      = path.resolve(output, 'js');
 
 module.exports = {
@@ -73,6 +74,11 @@ module.exports = {
             from: serviceWorker,
             to: path.resolve(output, 'sw.js'),
             toType: 'file'
-        }], {copyUnmodified: true})
+        }], {copyUnmodified: false}),
+        new CopyWebpackPlugin([{
+            from: icons,
+            to: path.resolve(output, 'icons'),
+            toType: 'dir'
+        }], {copyUnmodified: false})
     ]
 }
