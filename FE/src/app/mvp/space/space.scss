@@ -22,17 +22,24 @@
     }
 
     .space-view {
+        display: flex;
+        flex-flow: column nowrap;
         height: 100%;
         background: $white;
         box-shadow: 0px 0px 3px 0px $gray;
 
         .space-view-header {
+            flex-shrink: 0;
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-between;
 
             padding: 5px 10px;
             border-bottom: solid 1px $lightGray;
+
+            &.scroll-shadow {
+                box-shadow: 0 8px 10px -6px #c1c5c7;
+            }
 
             // .left {
             // }
@@ -46,10 +53,13 @@
             }
         }
 
+        .space-view-scroll-wrapper {
+            overflow-y: scroll;
+            //flex: 1 1 auto;
+        }
         .space-view-body {
+            
             padding: 10px;
         }
-
-        
     }
 }

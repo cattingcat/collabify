@@ -32,26 +32,7 @@ export class CollapsiblePanel extends React.Component<CollapsiblePanelProps, Col
                 <Separator title={this.props.title}></Separator>
             </div>
             <div className={contentClasses}>
-                Lorem ipsum dolor sit amet, consectetur 
-                adipisicing elit. Distinctio aliquam, voluptatum 
-                ab ut dolor nesciunt soluta voluptatem velit, ullam 
-                sunt assumenda ex necessitatibus debitis, pariatur 
-                magni natus ratione minus esse!
-                Lorem ipsum dolor sit amet, consectetur 
-                adipisicing elit. Distinctio aliquam, voluptatum 
-                ab ut dolor nesciunt soluta voluptatem velit, ullam 
-                sunt assumenda ex necessitatibus debitis, pariatur 
-                magni natus ratione minus esse!
-                Lorem ipsum dolor sit amet, consectetur 
-                adipisicing elit. Distinctio aliquam, voluptatum 
-                ab ut dolor nesciunt soluta voluptatem velit, ullam 
-                sunt assumenda ex necessitatibus debitis, pariatur 
-                magni natus ratione minus esse!
-                Lorem ipsum dolor sit amet, consectetur 
-                adipisicing elit. Distinctio aliquam, voluptatum 
-                ab ut dolor nesciunt soluta voluptatem velit, ullam 
-                sunt assumenda ex necessitatibus debitis, pariatur 
-                magni natus ratione minus esse!
+                {this.props.children}
             </div>
         </div>
     }
