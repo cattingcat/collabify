@@ -1,0 +1,30 @@
+@import 'kit/variables';
+
+.text_editor {
+    display: flex;
+    position: relative;
+    padding-top: 25px;  // Sync with toolbar height
+    min-height: 200px;
+
+    .text_editor_toolbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .editable {
+        flex-grow: 1;
+        outline: none;
+
+        &[placeholder]:empty::before {
+            content: attr(placeholder);
+            color: $gray; 
+        }
+        
+        &[placeholder]:empty:focus::before {
+            content: "";
+        }
+    }
+
+    
+}

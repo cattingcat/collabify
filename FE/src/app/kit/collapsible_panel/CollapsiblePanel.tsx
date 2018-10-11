@@ -5,6 +5,7 @@ import { Separator } from 'kit/separator/Separator';
 export interface CollapsiblePanelProps {
     readonly title: string;
     readonly className?: string;
+    readonly isCollapsible?: boolean;
 }
 
 export interface CollapsiblePanelState {
@@ -12,6 +13,10 @@ export interface CollapsiblePanelState {
 }
 
 export class CollapsiblePanel extends React.Component<CollapsiblePanelProps, CollapsiblePanelState> {
+    static defaultProps: Partial<CollapsiblePanelProps> = {
+        isCollapsible: true
+    };
+
     constructor(props: CollapsiblePanelProps) {
         super(props);
         this.state = { isCollapsed: false };
@@ -38,6 +43,8 @@ export class CollapsiblePanel extends React.Component<CollapsiblePanelProps, Col
     }
 
     _handleHeaderClick(): void {
+        if(!this.props.isCollapsible) return;
+
         this.setState({isCollapsed: !this.state.isCollapsed});
     }
 }

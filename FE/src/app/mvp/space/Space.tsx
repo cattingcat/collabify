@@ -4,6 +4,8 @@ import { SpacePanel, SpacePanelProps } from 'components/space_panel/space_panel/
 import { IconButton } from 'kit/icon_button/IconButton';
 import { Separator } from 'kit/separator/Separator';
 import { CollapsiblePanel } from 'kit/collapsible_panel/CollapsiblePanel';
+import { TextEditor } from 'components/text_editor/TextEditor';
+import { TitledPanel } from 'kit/titled_panel/TitledPanel';
 
 interface SpaceState {
     isScrolled: boolean;
@@ -41,48 +43,19 @@ export class Space extends React.Component<{}, SpaceState> {
 
                         <div className="space-view-body">
                             <Separator title='Test separator'></Separator>
-                            <CollapsiblePanel title='Collaspible panel test'>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
+                            
+                            <CollapsiblePanel title='Description'>
+                                <TextEditor 
+                                    placeholder='Enter your description here...'
+                                    className=''></TextEditor>
                             </CollapsiblePanel>
-                            <CollapsiblePanel title='Collaspible panel test'>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                            </CollapsiblePanel>
-                            <CollapsiblePanel title='Collaspible panel test'>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                            </CollapsiblePanel>
-                            <CollapsiblePanel title='Collaspible panel test'>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                            </CollapsiblePanel>
-                            <CollapsiblePanel title='Collaspible panel test'>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                            </CollapsiblePanel>
-                            <CollapsiblePanel title='Collaspible panel test'>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                            </CollapsiblePanel>
-                            <CollapsiblePanel title='Collaspible panel test'>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, libero nostrum? Aperiam veritatis architecto accusantium laboriosam molestias pariatur, tenetur iusto provident eaque impedit rem deserunt sit, dolor cupiditate? Nam, eligendi?
-                            </CollapsiblePanel>
+
+                            <TitledPanel title='Description 2'>
+                                <TextEditor 
+                                    placeholder='Enter your description here...'
+                                    className=''></TextEditor>
+                            </TitledPanel>
+
                         </div>
                     </div>
                 </div>
