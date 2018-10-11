@@ -37,6 +37,11 @@ $maxPanelWidht: 200px;
         }
     }
 
+    .settings-list {
+        border-bottom: solid 1px $gray;
+        margin-bottom: 9px;
+    }
+
     .space-item {
         transition: $transition;
         cursor: pointer;

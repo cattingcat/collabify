@@ -3,12 +3,33 @@
 .icon-button {
     background-image: url('/icons/error.svg');
     background-repeat: no-repeat;
-
-    //background-color: DodgerBlue;
+    background-color: transparent;
     border: none;
     color: white;
     padding: $szSmall / 2;
     font-size: 16px;
     cursor: pointer; 
     outline: none;
+    
+    width: $szSmall;
+    height: $szSmall;
+
+
+
+    &.large {
+        width: 100px;
+        height: 100px;
+    }
+
+    &.medium {
+        width: 60px;
+        height: 60px;
+    }
+
+    &.small {
+        width: $szSmall;
+        height: $szSmall;
+        min-width: $szSmall;
+        min-height: $szSmall;
+    }
 }

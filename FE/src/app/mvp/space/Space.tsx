@@ -18,7 +18,7 @@ export class Space extends React.Component {
                             <h2 className='title'>Space title</h2>
                         </div>
                         <div className='right'>
-                            <IconButton></IconButton>
+                            <IconButton size='small'></IconButton>
                         </div>
                     </div>
                 </div>
