@@ -1,0 +1,22 @@
+
+
+.separator {
+    display: flex;
+    flex-flow: row nowrap;
+    min-height: inherit;
+    align-items: center;
+    
+    .title {
+        text-transform: uppercase;
+        flex-shrink: 0;
+        margin-right: 8px;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        border-top: 1px solid rgba(0,0,0,0.16);
+        flex-grow: 1;
+        flex-shrink: 0;
+    }
+}

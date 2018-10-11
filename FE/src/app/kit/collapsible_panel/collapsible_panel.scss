@@ -1,0 +1,20 @@
+@import 'kit/variables';
+
+.collapsible_panel {
+    .panel_header {
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .content {
+        position: relative;
+        overflow: hidden;
+        transition: $transition;
+        overflow: hidden;
+        max-height: 500px;
+
+        &.collapsed {
+            max-height: 0;
+        }
+    }
+}
