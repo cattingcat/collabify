@@ -23,7 +23,10 @@ export class SpaceView extends React.Component<{}, SpaceViewState> {
                     <h2 className='title'>Space title</h2>
                 </div>
                 <div className='right'>
-                    <IconButton size='small'></IconButton>
+                    <IconButton 
+                        size='small'
+                        icon='multiply'>
+                    </IconButton>
                 </div>
             </div>
 

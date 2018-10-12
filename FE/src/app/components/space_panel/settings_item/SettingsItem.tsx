@@ -8,23 +8,26 @@ export interface SettingsItemModel {
     readonly showInfo: boolean;
     readonly title: string;
     readonly className?: string
+    readonly icon: string;
     readonly onClick?: () => void;
 }
 
 export class SettingsItem extends React.Component<SettingsItemModel> {
     render(): JSX.Element {
-        const settingsTitleClasses = this.props.showInfo ? '' : 'hidden';
-        const classNames = `settings-item ${this.props.className}`;
-        const handleClick = this.props.onClick;
+        const p = this.props;
+        const settingsTitleClasses = p.showInfo ? '' : 'hidden';
+        const classNames = `settings-item ${p.className}`;
+        const handleClick = p.onClick;
 
-        return <div className={classNames} onClick={this.props.onClick}>
+        return <div className={classNames} onClick={p.onClick}>
             <IconButton 
+                icon={p.icon}
                 size='small'
                 className='settings-icon'
                 onClick={handleClick}>
             </IconButton>
             <div className={`settings-title ${settingsTitleClasses}`}>
-                some settings
+                {p.title}
             </div>
         </div>
     }

@@ -28,7 +28,7 @@ const rows: Array<RowElement> = [
 const columns: Array<GridColumnConfig> = [
     {
         name: 'id',
-        width: 100
+        width: 15
     },
     {
         name: 'title',

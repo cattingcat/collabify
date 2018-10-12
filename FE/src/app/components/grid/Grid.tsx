@@ -28,11 +28,7 @@ export class Grid extends React.Component<GridProps> {
                     <thead>
                         <tr>
                             {columns.map((c, i) => {
-                                const styles: React.CSSProperties = {
-                                    width: c.width
-                                };
-
-                                return <th key={i} style={styles}>
+                                return <th key={i}>
                                     <strong>{c.name}</strong>
                                 </th>
                             })}
@@ -46,11 +42,7 @@ export class Grid extends React.Component<GridProps> {
                     <tbody>
                         {rows.map((row, i) => {
                             const cells = row.map((cell, i) => {
-                                const styles: React.CSSProperties = {
-                                    width: columns[i].width
-                                };
-
-                                return <td key={i} style={styles}>{cell}</td>;
+                                return <td key={i}>{cell}</td>;
                             });
 
                             return <tr key={i}>{cells}</tr>

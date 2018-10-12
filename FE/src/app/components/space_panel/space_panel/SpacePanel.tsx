@@ -3,7 +3,6 @@ import { SpaceItem } from 'components/space_panel/space_item/SpaceItem';
 import { SpaceModel } from 'components/space_panel/SpaceModel';
 import './space_panel.scss';
 import { SpaceId } from 'domain/Space';
-import { IconButton } from 'kit/icon_button/IconButton';
 import { SettingsItem } from 'components/space_panel/settings_item/SettingsItem';
 
 
@@ -16,7 +15,7 @@ const testModels: Array<SpaceModel> = [
     {
         id: 2,
         name: 'asdasdasd',
-        logoUri: 'https://www.geek.com/wp-content/uploads/2018/09/bowsetteyellow-625x352.jpg'
+        logoUri: 'https://i.imgur.com/DL9uN5W.jpg'
     },
     {
         id: 3,
@@ -25,48 +24,44 @@ const testModels: Array<SpaceModel> = [
     }
 ];
 
-const testProps: SpacePanelProps = {
-    models: testModels,
-    selectedId: 1,
-    className: ''
-}
 
-
-export interface SpacePanelProps {
+interface SpacePanelProps {
     readonly models: Array<SpaceModel>;
     readonly selectedId: SpaceId;
-    readonly className: string;
+    readonly className?: string;
     readonly onSpaceClick?: (model: SpaceModel) => void;
 }
 
-export interface SpacePanelState {
+interface SpacePanelState {
     showInfos: boolean;
 }
 
 export class SpacePanel extends React.Component<SpacePanelProps, SpacePanelState> {
-    static readonly defaultProps: SpacePanelProps = testProps;
+    static readonly defaultProps: SpacePanelProps = {
+        models: testModels,
+        selectedId: 1
+    };
 
     constructor(props: SpacePanelProps) {
         super(props);
         this.state = {
-            showInfos: true
+            showInfos: false
         };
     }
     
     
     render(): JSX.Element {
+        const p = this.props;
         const isExpanded = this.state.showInfos;
 
-        const settingsItems = ['setting 1', 'setting 2', 'setting 3'].map((i) => {
-            return <SettingsItem
-                key={i}
-                title={i}
-                showInfo={isExpanded}>
-            </SettingsItem>
-        });
+        const settingsItem = <SettingsItem
+            icon='settings'
+            title='Settings'
+            showInfo={isExpanded}>
+        </SettingsItem>;
 
-        const spaceItems = this.props.models.map((m) => {
-            const isSelected = m.id == this.props.selectedId;
+        const spaceItems = p.models.map((m) => {
+            const isSelected = m.id == p.selectedId;
             const itemClasses = `space-item ${isSelected ? 'selected': ''}`;
             return <SpaceItem 
                 key={m.id} 
@@ -78,16 +73,33 @@ export class SpacePanel extends React.Component<SpacePanelProps, SpacePanelState
             </SpaceItem>
         });
 
+        const createSpaceItem = <SettingsItem
+            icon='plus'
+            title='Create space'
+            showInfo={isExpanded}>
+        </SettingsItem>;
+
+        const expandPanelBtn = <SettingsItem
+            icon={isExpanded ? 'multiply' : 'fast-forward'}
+            title='Collapse panel'
+            showInfo={isExpanded}
+            onClick={this._handleClick.bind(this)}>
+        </SettingsItem>;
+
+
         const closeClass = isExpanded ? 'expanded' : ''; 
-        const classes = `space-panel ${this.props.className} ${closeClass}`;
+        const classes = `space-panel ${p.className} ${closeClass}`;
         return <div className={classes}>
-            <div className="settings-list">
-                {settingsItems}
+            <div className="settings-list separate-border">
+                {settingsItem}
             </div>
-            <div className="space-list">
+            <div className="space-list separate-border">
                 {spaceItems}
             </div>
-            <button onClick={this._handleClick.bind(this)}>test</button>
+            <div className='settings-list'>
+                {createSpaceItem}
+                {expandPanelBtn}
+            </div>
         </div>
     }
 

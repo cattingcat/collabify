@@ -32,12 +32,11 @@ $maxPanelWidht: 200px;
         width: $maxPanelWidht;
 
         .space-item:hover {
-            //background: $hoverItemBg;
             color: rgb(173, 173, 173);
         }
     }
 
-    .settings-list {
+    .separate-border {
         border-bottom: solid 1px $gray;
         margin-bottom: 9px;
     }

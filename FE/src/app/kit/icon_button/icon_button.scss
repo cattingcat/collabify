@@ -1,7 +1,6 @@
 @import 'kit/variables';
 
 .icon-button {
-    background-image: url('/icons/error.svg');
     background-repeat: no-repeat;
     background-color: transparent;
     border: none;
@@ -13,8 +12,6 @@
     
     width: $szSmall;
     height: $szSmall;
-
-
 
     &.large {
         width: 100px;
