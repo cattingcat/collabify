@@ -1,0 +1,60 @@
+.grid {
+    display: flex;
+    flex-flow: column nowrap;
+
+    overflow-x: scroll;
+
+    .header-wrapper {
+        flex-shrink: 0;
+        border-top: 1px solid rgba(0,0,0,0.08);
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+        //border-right: 1px solid rgba(0,0,0,0.08);
+        //border-left: 1px solid rgba(0,0,0,0.08);
+
+
+        thead {
+            th {
+                box-sizing: border-box;
+                border-right: 1px solid rgba(0,0,0,0.08);
+                padding: 10px;
+            }
+
+            th:first-child {
+                border-left: 1px solid rgba(0,0,0,0.08);
+            }
+
+            th:last-child {
+                border-right: 1px solid rgba(0,0,0,0.08);
+            }
+        }
+    }
+
+    .content-wrapper {
+        flex-grow: 1;
+        overflow-y: scroll;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse; 
+
+
+
+        tr {
+            td {
+                box-sizing: border-box;
+                border-bottom: 1px solid rgba(0,0,0,0.08);
+                border-right: 1px solid rgba(0,0,0,0.08);
+                padding: 6px 10px;
+            }
+
+            td:first-child {
+                border-left: 1px solid rgba(0,0,0,0.08);
+            }
+
+            td:last-child {
+                border-right: 1px solid rgba(0,0,0,0.08);
+            }
+        }
+    }
+}

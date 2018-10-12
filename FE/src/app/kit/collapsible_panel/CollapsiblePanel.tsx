@@ -2,14 +2,14 @@ import * as React from 'react';
 import './collapsible_panel.scss';
 import { Separator } from 'kit/separator/Separator';
 
-export interface CollapsiblePanelProps {
+interface CollapsiblePanelProps {
     readonly title: string;
     readonly className?: string;
     readonly isCollapsible?: boolean;
     readonly isCollapsed?: boolean;
 }
 
-export interface CollapsiblePanelState {
+interface CollapsiblePanelState {
     isCollapsed: boolean;
 }
 
