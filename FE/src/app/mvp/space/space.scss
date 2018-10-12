@@ -2,12 +2,13 @@
 
 .space {
     display: flex;
-    height: 100%;
-    width: 100%;
-    background: $lightGray;
     flex-flow: row nowrap;
     align-items: stretch;
 
+    height: 100%;
+    width: 100%;
+    background: $lightGray;
+    
     .column {
         flex-grow: 1;
         height: 100%;

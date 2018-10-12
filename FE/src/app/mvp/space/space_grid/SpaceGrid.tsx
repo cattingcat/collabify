@@ -2,48 +2,30 @@ import * as React from 'react';
 import './space_grid.scss';
 import { Grid, GridColumnConfig } from 'components/grid/Grid';
 import { GridColumnEndProperty } from 'csstype';
+import { TreeGrid } from 'components/tree_grid/TreeGrid';
 
 
 export class SpaceGrid extends React.Component {
+    constructor(props: any) {
+        super(props);
+        this._handleClick = this._handleClick.bind(this);
+    }
 
     render(): JSX.Element {
-        const rows: Array<Object> = [];
-        for(let i = 0; i < 1000; ++i) {
-            rows.push({
-                a: i, b: 2, c: 3
-            });
-        }
-
-        const columns: Array<GridColumnConfig> = [
-            {
-                name: 'first',
-                width: 100,
-                getCell(o: Object) { 
-                    return (o as any)['a'];
-                }
-            },
-            {
-                name: 'second',
-                width: 150,
-                getCell(o: Object) { 
-                    return (o as any)['b'];
-                }
-            },
-            {
-                name: 'third',
-                width: 200,
-                getCell(o: Object) { 
-                    return (o as any)['c'];
-                }
-            },
-        ];
-        
         return <div className='space-grid'>
-            <Grid
-                className='grid_component'
-                columns={columns}
-                rows={rows}>
-            </Grid>
+            <TreeGrid></TreeGrid>
+
+            <button onClick={this._handleClick}>Click me</button>
         </div>
+    }
+
+
+    private _handleClick(): void {
+        // const obj = {
+        //     a: 'test', b: 2, c: 3
+        // };
+        // const newList = [obj, ...this.state.rows];
+
+        // this.setState({rows: newList});
     }
 }

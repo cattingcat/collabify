@@ -1,0 +1,18 @@
+@import 'kit/variables';
+
+.collapse_icon {
+    .icon {
+        width: .7em;
+        height: .7em;
+        background: url('/icons/play-button.svg');
+        display: inline-block;
+        transition: $transition;
+    }
+
+    &.expanded {
+        .icon {
+            transform: rotate(90deg);
+        }
+    }
+}
+

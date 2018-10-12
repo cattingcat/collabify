@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './collapsible_panel.scss';
 import { Separator } from 'kit/separator/Separator';
+import { CollapseIcon } from 'kit/collapse_icon/CollapseIcon';
 
 interface CollapsiblePanelProps {
     readonly title: string;
@@ -33,7 +34,11 @@ export class CollapsiblePanel extends React.Component<CollapsiblePanelProps, Col
             <div 
                 className='panel_header' 
                 onClick={this._handleHeaderClick}>
-                <div className='collapse_expand_icon'></div>
+
+                <CollapseIcon 
+                    className='collapse_expand_icon'
+                    isExpanded={!isCollapsed}>
+                </CollapseIcon>
 
                 <Separator 
                     className='header_separator'

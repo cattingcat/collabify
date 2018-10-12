@@ -9,12 +9,7 @@
 
         .collapse_expand_icon {
             flex-shrink: 0;
-            width: 1em;
-            height: 1em;
-            background: url('/icons/play-button.svg');
             margin-right: 5px;
-            transform: rotate(90deg);
-            transition: $transition;
         }
 
         .header_separator {
@@ -32,10 +27,6 @@
     &.collapsed {
         .content {
             max-height: 0;
-        }
-
-        .collapse_expand_icon {
-            transform: rotate(0);
         }
     }
 }

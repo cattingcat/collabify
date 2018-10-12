@@ -1,0 +1,22 @@
+@import 'kit/variables';
+
+.title_cell {
+    display: flex;
+    flex-flow: row nowrap;
+
+    .expand_icon_placeholder {
+        width: 1em;
+        height: 1em;
+        margin-right: 5px;
+    }
+
+    .collapse_expand_icon {
+        flex-shrink: 0;
+        margin-right: 5px;
+    }
+
+    .title_text {
+
+
+    }
+}

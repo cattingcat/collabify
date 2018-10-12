@@ -1,3 +1,5 @@
+@import 'kit/variables';
+
 .grid {
     display: flex;
     flex-flow: column nowrap;
@@ -37,8 +39,7 @@
     table {
         width: 100%;
         border-collapse: collapse; 
-
-
+        table-layout: fixed;
 
         tr {
             td {
@@ -54,6 +55,10 @@
 
             td:last-child {
                 border-right: 1px solid rgba(0,0,0,0.08);
+            }
+
+            &:hover {
+                background: $lightGray;
             }
         }
     }

@@ -1,9 +1,10 @@
 import * as React from 'react';
 import './grid.scss';
+import { zip } from 'rxjs';
 
 interface GridProps {
     readonly columns: Array<GridColumnConfig>;
-    readonly rows: Array<Object>;
+    readonly rows: Array<Array<JSX.Element>>;
 
     readonly className?: string;
 }
@@ -11,7 +12,6 @@ interface GridProps {
 export interface GridColumnConfig {
     readonly name: string;
     readonly width: number;
-    getCell(o: Object): JSX.Element;
 }
 
 
@@ -19,10 +19,12 @@ export class Grid extends React.Component<GridProps> {
     render(): JSX.Element {
         const {columns, rows} = this.props;
         const classes = `grid ${this.props.className}`;
+        const colGroup = this._generateColgroup(columns);
 
         return <div className={classes}>
             <div className='header-wrapper'>
                 <table className='header'>
+                    {colGroup}
                     <thead>
                         <tr>
                             {columns.map((c, i) => {
@@ -30,7 +32,9 @@ export class Grid extends React.Component<GridProps> {
                                     width: c.width
                                 };
 
-                                return <th key={i} style={styles}><strong>{c.name}</strong></th>
+                                return <th key={i} style={styles}>
+                                    <strong>{c.name}</strong>
+                                </th>
                             })}
                         </tr>
                     </thead>
@@ -38,14 +42,15 @@ export class Grid extends React.Component<GridProps> {
             </div>
             <div className='content-wrapper'>
                 <table className='content'>
+                    {colGroup}
                     <tbody>
-                        {rows.map((r, i) => {
-                            const cells = columns.map((c, ic) => {
+                        {rows.map((row, i) => {
+                            const cells = row.map((cell, i) => {
                                 const styles: React.CSSProperties = {
-                                    width: c.width
+                                    width: columns[i].width
                                 };
 
-                                return <td key={ic} style={styles}>{c.getCell(r)}</td>;
+                                return <td key={i} style={styles}>{cell}</td>;
                             });
 
                             return <tr key={i}>{cells}</tr>
@@ -61,5 +66,14 @@ export class Grid extends React.Component<GridProps> {
                 </table>
             </div>
         </div>
+    }
+
+    private _generateColgroup(columns: Array<GridColumnConfig>): JSX.Element {
+        return <colgroup>
+            {columns.map((cell, i) => {
+                const colWidth = cell.width;
+                return <col key={i} width={colWidth} />;
+            })}
+        </colgroup>
     }
 }

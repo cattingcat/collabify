@@ -12,8 +12,8 @@ export class Space extends React.Component {
                 <SpacePanel className='side-panel'></SpacePanel>
             </div>
             <div className='column main-panel-container'> 
-              {/* <SpaceView></SpaceView> */}
-              <SpaceGrid></SpaceGrid>
+                {/* <SpaceView></SpaceView> */}
+                <SpaceGrid></SpaceGrid>
             </div>
         </div>
     }
