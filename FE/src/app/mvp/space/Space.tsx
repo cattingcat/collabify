@@ -42,19 +42,17 @@ export class Space extends React.Component<{}, SpaceState> {
                         onScroll={this._handleScroll}>
 
                         <div className="space-view-body">
-                            <Separator title='Test separator'></Separator>
-                            
-                            <CollapsiblePanel title='Description'>
-                                <TextEditor 
-                                    placeholder='Enter your description here...'
-                                    className=''></TextEditor>
+                            <TextEditor 
+                                placeholder='Enter your description here...'
+                                className=''></TextEditor>
+
+                            <CollapsiblePanel title='Fields'>
+                                // TODO: fields panel
                             </CollapsiblePanel>
 
-                            <TitledPanel title='Description 2'>
-                                <TextEditor 
-                                    placeholder='Enter your description here...'
-                                    className=''></TextEditor>
-                            </TitledPanel>
+                            <CollapsiblePanel title='Stats'>
+                                // TODO: Stats panel
+                            </CollapsiblePanel>
 
                         </div>
                     </div>

@@ -8,7 +8,8 @@ export interface SeparatorProps {
 
 export class Separator extends React.Component<SeparatorProps> {    
     render(): JSX.Element {
-        return <div className='separator'>
+        const classes = `separator ${this.props.className}`;
+        return <div className={classes}>
             <div className='title'>
                 <strong>{this.props.title}</strong>
             </div>

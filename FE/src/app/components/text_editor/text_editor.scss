@@ -2,14 +2,13 @@
 
 .text_editor {
     display: flex;
-    position: relative;
-    padding-top: 25px;  // Sync with toolbar height
+    flex-flow: column nowrap;
     min-height: 200px;
 
     .text_editor_toolbar {
-        position: absolute;
-        top: 0;
-        left: 0;
+        display: block;
+        position: sticky;
+        top: 3px;
     }
 
     .editable {

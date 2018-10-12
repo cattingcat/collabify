@@ -6,6 +6,7 @@ export interface CollapsiblePanelProps {
     readonly title: string;
     readonly className?: string;
     readonly isCollapsible?: boolean;
+    readonly isCollapsed?: boolean;
 }
 
 export interface CollapsiblePanelState {
@@ -14,35 +15,39 @@ export interface CollapsiblePanelState {
 
 export class CollapsiblePanel extends React.Component<CollapsiblePanelProps, CollapsiblePanelState> {
     static defaultProps: Partial<CollapsiblePanelProps> = {
-        isCollapsible: true
+        isCollapsible: true,
+        isCollapsed: true
     };
 
     constructor(props: CollapsiblePanelProps) {
         super(props);
-        this.state = { isCollapsed: false };
+        this.state = { isCollapsed: this.props.isCollapsed };
         this._handleHeaderClick = this._handleHeaderClick.bind(this);
     }
 
     render(): JSX.Element {
         const isCollapsed = this.state.isCollapsed;
-
-        const classes = `collapsible_panel ${this.props.className}`;
-        const contentClasses = `content ${isCollapsed ? 'collapsed' : ''}`;
+        const classes = `collapsible_panel ${this.props.className} ${isCollapsed ? 'collapsed' : ''}`;
 
         return <div className={classes}>
             <div 
                 className='panel_header' 
                 onClick={this._handleHeaderClick}>
+                <div className='collapse_expand_icon'></div>
 
-                <Separator title={this.props.title}></Separator>
+                <Separator 
+                    className='header_separator'
+                    title={this.props.title}>
+                </Separator>
             </div>
-            <div className={contentClasses}>
+            <div className='content'>
                 {this.props.children}
             </div>
         </div>
     }
 
-    _handleHeaderClick(): void {
+
+    private _handleHeaderClick(): void {
         if(!this.props.isCollapsible) return;
 
         this.setState({isCollapsed: !this.state.isCollapsed});
