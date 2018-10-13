@@ -1,6 +1,4 @@
 import * as React from 'react';
-import { SpaceModel } from 'components/space_panel/SpaceModel';
-import { AvatarImage } from 'kit/avatar/AvatarImage';
 import './settings_item.scss';
 import { IconButton } from 'kit/icon_button/IconButton';
 

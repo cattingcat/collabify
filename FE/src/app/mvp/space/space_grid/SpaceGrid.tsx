@@ -3,6 +3,7 @@ import './space_grid.scss';
 import { Grid, GridColumnConfig } from 'components/grid/Grid';
 import { GridColumnEndProperty } from 'csstype';
 import { TreeGrid } from 'components/tree_grid/TreeGrid';
+import { PanelHeader } from 'components/panel_header/PanelHeader';
 
 
 export class SpaceGrid extends React.Component {
@@ -13,9 +14,15 @@ export class SpaceGrid extends React.Component {
 
     render(): JSX.Element {
         return <div className='space-grid'>
-            <TreeGrid></TreeGrid>
+            <PanelHeader 
+                title='Space title'>
+            </PanelHeader>
 
-            <button onClick={this._handleClick}>Click me</button>
+            <div className='content'>
+                <TreeGrid></TreeGrid>
+
+                <button onClick={this._handleClick}>Click me</button>
+            </div>
         </div>
     }
 

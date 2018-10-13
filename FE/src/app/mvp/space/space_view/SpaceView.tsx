@@ -4,6 +4,7 @@ import { IconButton } from 'kit/icon_button/IconButton';
 import { CollapsiblePanel } from 'kit/collapsible_panel/CollapsiblePanel';
 import { TextEditor } from 'components/text_editor/TextEditor';
 import { ActionPanel, ActionItemProps } from 'components/action_panel/ActionPanel';
+import { PanelHeader } from 'components/panel_header/PanelHeader';
 
 interface SpaceViewState {
     isScrolled: boolean;
@@ -32,13 +33,13 @@ export class SpaceView extends React.Component<{}, SpaceViewState> {
             }
         ];
 
-        const headerClasses = `space-view-header ${this.state.isScrolled ? 'scroll-shadow' : ''}`;
+        const headerClasses = `${this.state.isScrolled ? 'scroll-shadow' : ''}`;
         return <div className='space-view'>
-            <div className={headerClasses}>
-                <div className='left'>
-                    <h2 className='title'>Space title</h2>
-                </div>
-            </div>
+
+            <PanelHeader 
+                title='Space title'
+                className={headerClasses}>
+            </PanelHeader>
 
             <div 
                 className="space-view-scroll-wrapper" 

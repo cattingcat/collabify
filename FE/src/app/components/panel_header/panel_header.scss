@@ -1,0 +1,17 @@
+@import 'kit/variables';
+
+.panel_header__123 {
+    flex-shrink: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    padding: 8px 20px;
+    border-bottom: solid 1px $lightGray;
+
+    h2.title {
+        display: inline-block;
+        font-size: xx-large;
+        margin: 0;
+    }
+}

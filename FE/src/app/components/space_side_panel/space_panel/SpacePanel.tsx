@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { SpaceItem } from 'components/space_panel/space_item/SpaceItem';
-import { SpaceModel } from 'components/space_panel/SpaceModel';
+import { SpaceItem } from 'components/space_side_panel/space_item/SpaceItem';
+import { SpaceModel } from 'components/space_side_panel/SpaceModel';
 import './space_panel.scss';
 import { SpaceId } from 'domain/Space';
-import { SettingsItem } from 'components/space_panel/settings_item/SettingsItem';
+import { SettingsItem } from 'components/space_side_panel/settings_item/SettingsItem';
 
 
 const testModels: Array<SpaceModel> = [

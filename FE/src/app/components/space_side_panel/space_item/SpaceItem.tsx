@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { SpaceModel } from 'components/space_panel/SpaceModel';
+import { SpaceModel } from 'components/space_side_panel/SpaceModel';
 import { AvatarImage } from 'kit/avatar/AvatarImage';
 import './space_item.scss';
 

@@ -9,6 +9,8 @@
         border: none;
         cursor: pointer; 
         outline: none;
+        padding: 0;
+        margin-right: 15px;
 
         &:hover {
             color: $blue;

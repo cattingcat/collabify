@@ -1,8 +1,8 @@
 import * as React from 'react';
 import './space.scss';
-import { SpacePanel } from 'components/space_panel/space_panel/SpacePanel';
 import { SpaceView } from 'mvp/space/space_view/SpaceView';
 import { SpaceGrid } from 'mvp/space/space_grid/SpaceGrid';
+import { SpacePanel } from 'components/space_side_panel/space_panel/SpacePanel';
 
 
 export class Space extends React.Component {
@@ -12,8 +12,8 @@ export class Space extends React.Component {
                 <SpacePanel className='side-panel'></SpacePanel>
             </div>
             <div className='column main-panel-container'> 
-                <SpaceView></SpaceView>
-                {/* <SpaceGrid></SpaceGrid> */}
+                {/* <SpaceView></SpaceView> */}
+                <SpaceGrid></SpaceGrid>
             </div>
         </div>
     }
