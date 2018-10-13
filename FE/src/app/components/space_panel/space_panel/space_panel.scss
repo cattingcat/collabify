@@ -30,24 +30,10 @@ $maxPanelWidht: 200px;
     
     &.expanded {
         width: $maxPanelWidht;
-
-        .space-item:hover {
-            color: rgb(173, 173, 173);
-        }
     }
 
     .separate-border {
-        border-bottom: solid 1px $gray;
+        border-bottom: solid 1px $lightGrayDarker;
         margin-bottom: 9px;
-    }
-
-    .space-item {
-        transition: $transition;
-        cursor: pointer;
-
-        &.selected {
-            //background: $selectedItemBg;
-            //color: $selectedItemTextColor;
-        }
     }
 }

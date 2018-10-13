@@ -3,6 +3,7 @@ import './space_view.scss';
 import { IconButton } from 'kit/icon_button/IconButton';
 import { CollapsiblePanel } from 'kit/collapsible_panel/CollapsiblePanel';
 import { TextEditor } from 'components/text_editor/TextEditor';
+import { ActionPanel, ActionItemProps } from 'components/action_panel/ActionPanel';
 
 interface SpaceViewState {
     isScrolled: boolean;
@@ -16,17 +17,26 @@ export class SpaceView extends React.Component<{}, SpaceViewState> {
     }
 
     render(): JSX.Element {
+        const actionItems: Array<ActionItemProps> = [
+            {
+                icon: 'list',
+                title: 'List view'
+            },
+            {
+                icon: 'calendar-5',
+                title: 'Grid view'
+            },
+            {
+                icon: 'controls-8',
+                title: 'Reports'
+            }
+        ];
+
         const headerClasses = `space-view-header ${this.state.isScrolled ? 'scroll-shadow' : ''}`;
         return <div className='space-view'>
             <div className={headerClasses}>
                 <div className='left'>
                     <h2 className='title'>Space title</h2>
-                </div>
-                <div className='right'>
-                    <IconButton 
-                        size='small'
-                        icon='multiply'>
-                    </IconButton>
                 </div>
             </div>
 
@@ -35,9 +45,17 @@ export class SpaceView extends React.Component<{}, SpaceViewState> {
                 onScroll={this._handleScroll}>
 
                 <div className="space-view-body">
-                    <TextEditor 
-                        placeholder='Enter your description here...'
-                        className=''></TextEditor>
+                    <div className="main-content">
+                        <TextEditor 
+                            placeholder='Enter your description here...'
+                            className='space-description'>
+                        </TextEditor>
+
+                        <ActionPanel 
+                            items={actionItems}
+                            className='space-actions'>
+                        </ActionPanel>
+                    </div>
 
                     <CollapsiblePanel title='Fields'>
                         // TODO: fields panel

@@ -15,6 +15,10 @@
         .header_separator {
             flex-grow: 1;
         }
+
+        &:hover {
+            color: $blue;
+        }
     }
 
     .content {

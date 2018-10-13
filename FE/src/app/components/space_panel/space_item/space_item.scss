@@ -8,6 +8,7 @@ $borderW: 3px;
     border-left: solid transparent $borderW;
     padding-left: $borderW;
     box-sizing: border-box;
+    cursor: pointer;
 
     white-space: nowrap;
     
@@ -22,13 +23,15 @@ $borderW: 3px;
     }
 
     &:hover {
+        color: $blue;
+        
         .avatar-image img {
             border-radius: 20%;
         }
     }
 
     &.selected {
-        border-left: solid #359ee4 3px;
+        border-left: solid $blue 3px;
 
         .avatar-image img {
             border-radius: 20%;

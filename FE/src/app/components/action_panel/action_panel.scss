@@ -1,0 +1,21 @@
+@import 'kit/variables';
+
+.action-panel {
+    .action-item {
+        cursor: pointer;
+        padding: 5px;
+
+        .action-item-icon {}
+        .action-item-title {
+            display: inline-block;
+            line-height: 32px;
+            vertical-align: top;
+            height: 100%;
+            padding-left: 12px;
+        }
+
+        &:hover {
+            color: $blue;
+        }
+    }
+}

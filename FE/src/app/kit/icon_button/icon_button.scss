@@ -4,14 +4,8 @@
     background-repeat: no-repeat;
     background-color: transparent;
     border: none;
-    color: white;
-    padding: $szSmall / 2;
-    font-size: 16px;
     cursor: pointer; 
     outline: none;
-    
-    width: $szSmall;
-    height: $szSmall;
 
     &.large {
         width: 100px;

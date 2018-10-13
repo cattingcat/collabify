@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bl", "Bl", "{6687FDC0-409B-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication", "WebApplication\WebApplication.csproj", "{B1023009-1201-45ED-9B7A-DA6128A1D85C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{3247F7C0-7386-4304-92CB-063B7E2950AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collabify.Domain.Entities", "Collabify.Domain.Entities\Collabify.Domain.Entities.csproj", "{BA96E162-DFEB-4EA3-9ECD-B5FABB84CF71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,8 +30,13 @@ Global
 		{B1023009-1201-45ED-9B7A-DA6128A1D85C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1023009-1201-45ED-9B7A-DA6128A1D85C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1023009-1201-45ED-9B7A-DA6128A1D85C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA96E162-DFEB-4EA3-9ECD-B5FABB84CF71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA96E162-DFEB-4EA3-9ECD-B5FABB84CF71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA96E162-DFEB-4EA3-9ECD-B5FABB84CF71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA96E162-DFEB-4EA3-9ECD-B5FABB84CF71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B1023009-1201-45ED-9B7A-DA6128A1D85C} = {CBCF07D0-51DF-4FA2-93AC-A1E42C97A57E}
+		{BA96E162-DFEB-4EA3-9ECD-B5FABB84CF71} = {3247F7C0-7386-4304-92CB-063B7E2950AE}
 	EndGlobalSection
 EndGlobal

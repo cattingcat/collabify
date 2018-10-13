@@ -14,7 +14,7 @@
         flex-flow: row nowrap;
         justify-content: space-between;
 
-        padding: 5px 10px;
+        padding: 8px 20px;
         border-bottom: solid 1px $lightGray;
 
         &.scroll-shadow {
@@ -23,6 +23,7 @@
 
         h2.title {
             display: inline-block;
+            font-size: xx-large;
             margin: 0;
         }
     }
@@ -30,7 +31,22 @@
     .space-view-scroll-wrapper {
         overflow-y: scroll;
     }
+
     .space-view-body {
-        padding: 10px;
+        padding: 8px 20px;
+
+        .main-content {
+            display: flex;
+            flex-flow: row nowrap;
+            min-height: 400px;
+
+            .space-description {
+                flex-grow: 1;
+            }
+
+            .space-actions {
+                flex-shrink: 0;
+            }
+        }
     }
 }
