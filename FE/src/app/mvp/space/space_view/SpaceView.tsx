@@ -1,36 +1,44 @@
 import * as React from 'react';
 import './space_view.scss';
-import { IconButton } from 'kit/icon_button/IconButton';
 import { CollapsiblePanel } from 'kit/collapsible_panel/CollapsiblePanel';
 import { TextEditor } from 'components/text_editor/TextEditor';
 import { ActionPanel, ActionItemProps } from 'components/action_panel/ActionPanel';
 import { PanelHeader } from 'components/panel_header/PanelHeader';
+import { RouteComponentProps } from 'react-router-dom';
 
 interface SpaceViewState {
     isScrolled: boolean;
 }
 
-export class SpaceView extends React.Component<{}, SpaceViewState> {
-    constructor(props: any) {
+export class SpaceView extends React.Component<RouteComponentProps, SpaceViewState> {
+    private static _listViewAction: ActionItemProps = {
+        icon: 'list',
+        title: 'List view'
+    };
+
+    private static _gridViewAction: ActionItemProps = {
+        icon: 'calendar-5',
+                title: 'Grid view'
+    };
+
+    private static _reportsViewAction: ActionItemProps = {
+        icon: 'controls-8',
+                title: 'Reports'
+    };
+
+
+    constructor(props: RouteComponentProps) {
         super(props);
         this.state = {isScrolled: false}
         this._handleScroll = this._handleScroll.bind(this);
+        this._handleActionItemClick = this._handleActionItemClick.bind(this);
     }
 
     render(): JSX.Element {
         const actionItems: Array<ActionItemProps> = [
-            {
-                icon: 'list',
-                title: 'List view'
-            },
-            {
-                icon: 'calendar-5',
-                title: 'Grid view'
-            },
-            {
-                icon: 'controls-8',
-                title: 'Reports'
-            }
+            SpaceView._listViewAction,
+            SpaceView._gridViewAction,
+            SpaceView._reportsViewAction
         ];
 
         const headerClasses = `${this.state.isScrolled ? 'scroll-shadow' : ''}`;
@@ -54,7 +62,8 @@ export class SpaceView extends React.Component<{}, SpaceViewState> {
 
                         <ActionPanel 
                             items={actionItems}
-                            className='space-actions'>
+                            className='space-actions'
+                            onItemClick={this._handleActionItemClick}>
                         </ActionPanel>
                     </div>
 
@@ -73,5 +82,15 @@ export class SpaceView extends React.Component<{}, SpaceViewState> {
     private _handleScroll(event: any) : void {
         const scrolled = (event.target.scrollTop != 0);
         this.setState({isScrolled: scrolled});
+    }
+
+    private _handleActionItemClick(item: ActionItemProps): void {
+        const p = this.props;
+
+        if(item == SpaceView._gridViewAction) {    
+            p.history.push('/space/grid');
+        } else {
+            // TODO: more views
+        }
     }
 }

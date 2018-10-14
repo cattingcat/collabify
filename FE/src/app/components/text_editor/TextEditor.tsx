@@ -5,7 +5,7 @@ import { Toolbar } from 'components/text_editor/toolbar/Toolbar';
 
 export interface TextEditorProps {
     readonly className?: string;
-    readonly placeholder?: string
+    readonly placeholder?: string;
 }
 
 interface TextEditorState {

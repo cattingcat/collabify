@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {HashRouter, Switch, Route} from 'react-router-dom';
 import './space.scss';
 import { SpaceView } from 'mvp/space/space_view/SpaceView';
 import { SpaceGrid } from 'mvp/space/space_grid/SpaceGrid';
@@ -12,8 +13,12 @@ export class Space extends React.Component {
                 <SpacePanel className='side-panel'></SpacePanel>
             </div>
             <div className='column main-panel-container'> 
-                {/* <SpaceView></SpaceView> */}
-                <SpaceGrid></SpaceGrid>
+                <HashRouter>
+                    <Switch>
+                        <Route exact path='/space' component={SpaceView}/>
+                        <Route path='/space/grid' component={SpaceGrid}/>
+                    </Switch>
+                </HashRouter>
             </div>
         </div>
     }
