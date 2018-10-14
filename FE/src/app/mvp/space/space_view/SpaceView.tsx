@@ -89,8 +89,12 @@ export class SpaceView extends React.Component<RouteComponentProps, SpaceViewSta
 
         if(item == SpaceView._gridViewAction) {    
             p.history.push('/space/grid');
+        } else if(item == SpaceView._listViewAction) {
+            p.history.push('/space/list');
+        } else if(item == SpaceView._reportsViewAction) {
+            p.history.push('/reports');
         } else {
-            // TODO: more views
+            console.warn('Unexpected path');
         }
     }
 }

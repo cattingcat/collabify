@@ -1,0 +1,20 @@
+@import 'kit/variables';
+
+
+.space-list-view {
+    display: flex;
+    box-sizing: border-box;
+    flex-flow: row nowrap;
+    height: 100%;
+    
+
+    .column {
+        background-color: $white;
+        box-shadow: 0px 0px 3px 0px $gray;
+        box-sizing: border-box;
+
+        &:not(:last-child)  {
+            margin-right: 10px;
+        }
+    }
+}

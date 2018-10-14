@@ -1,7 +1,5 @@
 import * as React from 'react';
 import './space_grid.scss';
-import { Grid, GridColumnConfig } from 'components/grid/Grid';
-import { GridColumnEndProperty } from 'csstype';
 import { TreeGrid } from 'components/tree_grid/TreeGrid';
 import { PanelHeader } from 'components/panel_header/PanelHeader';
 
@@ -27,12 +25,5 @@ export class SpaceGrid extends React.Component {
     }
 
 
-    private _handleClick(): void {
-        // const obj = {
-        //     a: 'test', b: 2, c: 3
-        // };
-        // const newList = [obj, ...this.state.rows];
-
-        // this.setState({rows: newList});
-    }
+    private _handleClick(): void { }
 }

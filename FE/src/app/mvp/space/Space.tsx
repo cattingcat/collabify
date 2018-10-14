@@ -4,6 +4,7 @@ import './space.scss';
 import { SpaceView } from 'mvp/space/space_view/SpaceView';
 import { SpaceGrid } from 'mvp/space/space_grid/SpaceGrid';
 import { SpacePanel } from 'components/space_side_panel/space_panel/SpacePanel';
+import { SpaceList } from 'mvp/space/space_list/SpaceList';
 
 
 export class Space extends React.Component {
@@ -17,6 +18,7 @@ export class Space extends React.Component {
                     <Switch>
                         <Route exact path='/space' component={SpaceView}/>
                         <Route path='/space/grid' component={SpaceGrid}/>
+                        <Route path='/space/list' component={SpaceList}/>
                     </Switch>
                 </HashRouter>
             </div>
