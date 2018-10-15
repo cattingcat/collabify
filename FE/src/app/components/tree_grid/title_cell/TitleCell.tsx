@@ -1,6 +1,5 @@
 import * as React from 'react';
 import './title_cell.scss';
-import { Grid, GridColumnConfig } from 'components/grid/Grid';
 import { CollapseIcon } from 'kit/collapse_icon/CollapseIcon';
 
 interface TreeGridProps {
@@ -11,10 +10,27 @@ interface TreeGridProps {
     readonly className?: string;
 }
 
-export class TitleCell extends React.Component<TreeGridProps> {
+interface TitleCellState {
+    isEditable: boolean;
+}
+
+export class TitleCell extends React.Component<TreeGridProps, TitleCellState> {
+    private _formRef: React.RefObject<HTMLFormElement>;
+
+    constructor(props: TreeGridProps) {
+        super(props);
+        this.state = {isEditable: false};
+        this._handleDbClick = this._handleDbClick.bind(this);
+        this._handleClickOutside = this._handleClickOutside.bind(this);
+        this._handleFormSubmit = this._handleFormSubmit.bind(this);
+
+        this._formRef = React.createRef();
+    }
+
     render(): JSX.Element {
         const classes = `title_cell ${this.props.className}`;
         const p = this.props;
+        const s = this.state;
         const paddingLeft = p.level * 10;
         const titleStyle: React.CSSProperties = {paddingLeft: `${paddingLeft}px`};
 
@@ -30,10 +46,44 @@ export class TitleCell extends React.Component<TreeGridProps> {
 
         return <div 
             style={titleStyle}
-            className={classes}>
+            className={classes}
+            onDoubleClick={this._handleDbClick}>
 
             {collapseIcon} 
-            <div className='title_text'>{p.title}</div>
+
+            {s.isEditable ? (
+                <form 
+                    action="" 
+                    ref={this._formRef}
+                    onSubmit={this._handleFormSubmit}>
+                    <input type="text" name="" id=""/>
+                </form>
+            ) : (
+                <div className='title_text'>{p.title}</div>    
+            )}
         </div>
+    }
+
+
+    private _handleDbClick(): void {
+        this.setState({isEditable: true});
+        document.addEventListener('click', this._handleClickOutside);
+    }
+
+    private _handleClickOutside(e: MouseEvent): void {
+        const target = e.target;
+        const isFormClick = target instanceof HTMLElement 
+            && this._formRef.current.contains(target);
+
+        if(!isFormClick) {
+            this.setState({isEditable: false});
+            document.removeEventListener('click', this._handleClickOutside);
+        }
+    }
+
+    private _handleFormSubmit(event: React.FormEvent): void {
+        event.preventDefault();
+
+        console.log('QQQQ');
     }
 }

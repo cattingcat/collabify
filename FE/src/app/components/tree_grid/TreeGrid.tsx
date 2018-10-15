@@ -59,7 +59,7 @@ export class TreeGrid extends React.Component<TreeGridProps> {
                 title={node.title}
                 level={node.level}
                 hasChildren={node.hasChildren}
-                isExpanded={node.isExpanded} >
+                isExpanded={node.isExpanded}>
             </TitleCell>
 
             return [idNode, titleNode];

@@ -22,6 +22,9 @@ module.exports = {
         ],
         ComponentDemoModule: [
             './src/app/mvp/component_demo/ComponentDemoModule.ts'
+        ],
+        ReportsModule: [
+            './src/app/mvp/reports/ReportsModule.ts'
         ]
     },
     output: {
