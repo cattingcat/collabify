@@ -24,7 +24,7 @@ export class TitleCell extends React.Component<TitleCellProps, TitleCellState> {
         this._handleClickOutside = this._handleClickOutside.bind(this);
         this._handleFormSubmit = this._handleFormSubmit.bind(this);
 
-        this._formRef = React.createRef();
+        this._formRef = React.createRef<HTMLFormElement>();
     }
 
     render(): JSX.Element {

@@ -55,7 +55,13 @@
             }
 
             &:hover {
-                background: $lightGray;
+                background: $lightGray !important;
+            }
+        }
+
+        &.content {
+            tr:nth-child(2n+1) {
+                background: #fbfbfb;
             }
         }
     }

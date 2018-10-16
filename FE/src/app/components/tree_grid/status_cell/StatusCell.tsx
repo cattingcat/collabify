@@ -21,7 +21,7 @@ export class StatusCell extends React.Component<StatusCellProps, StatusCellState
         this._handleClick = this._handleClick.bind(this);
         this._handleClickOutside = this._handleClickOutside.bind(this);
 
-        this._cellRef = React.createRef();
+        this._cellRef = React.createRef<HTMLTableCellElement>();
     }
 
     render(): JSX.Element {
@@ -35,13 +35,24 @@ export class StatusCell extends React.Component<StatusCellProps, StatusCellState
             onClick={this._handleClick}>
 
 
-            {s.isShowDropDown ? (
-                <div ref={this._cellRef}>
-                {p.color}
+            <div>{p.title}</div>
+
+            {s.isShowDropDown &&
+                <div
+                    className='dropdown-container'
+                    ref={this._cellRef}>
+
+                    <div className='dropdown'>
+                        {p.color}
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                        </ul>
+                    </div>
                 </div>
-            ) : (
-                <div>{p.title}</div>
-            )}  
+            }  
         </div>
     }
 
