@@ -2,6 +2,7 @@ import * as React from 'react';
 //import './grid.scss';
 import { Grid, GridColumnConfig } from 'components/grid/Grid';
 import { TitleCell } from 'components/tree_grid/title_cell/TitleCell';
+import { StatusCell } from 'components/tree_grid/status_cell/StatusCell';
 
 interface TreeGridProps {
    readonly className?: string;
@@ -13,16 +14,29 @@ interface RowElement {
     readonly  hasChildren: boolean;
     readonly isExpanded: boolean;
     readonly title: string;
+    readonly status: Status; 
 }
 
+interface Status {
+    readonly title: string;
+    readonly color: string;
+}
+
+const statuses: Array<Status> = [
+    {title: 'qweqwe', color: 'red'},
+    {title: 'dfgdfg', color: 'green'},
+    {title: 'cvbcvb', color: 'yellow'},
+    {title: 'sdfsdf', color: 'blue'},
+];
+
 const rows: Array<RowElement> = [
-    { id: 1, level: 0, hasChildren: true,  isExpanded: false, title: 'qweqwe' },
-    { id: 2, level: 0, hasChildren: true,  isExpanded: true,  title: 'asdasd' },
-    { id: 3, level: 1, hasChildren: true,  isExpanded: true,  title: 'rty'    },
-    { id: 4, level: 2, hasChildren: false, isExpanded: false, title: 'nvnvbn' },
-    { id: 6, level: 2, hasChildren: false, isExpanded: false, title: 'dfgdf' },
-    { id: 7, level: 2, hasChildren: false, isExpanded: false, title: 'nvncbcvbn' },
-    { id: 5, level: 0, hasChildren: true,  isExpanded: false, title: 'zxczxc' },
+    { id: 1, level: 0, hasChildren: true,  isExpanded: false, title: 'qweqwe', status: statuses[0] },
+    { id: 2, level: 0, hasChildren: true,  isExpanded: true,  title: 'asdasd', status: statuses[2] },
+    { id: 3, level: 1, hasChildren: true,  isExpanded: true,  title: 'rty'   , status: statuses[3]},
+    { id: 4, level: 2, hasChildren: false, isExpanded: false, title: 'nvnvbn', status: statuses[2]},
+    { id: 6, level: 2, hasChildren: false, isExpanded: false, title: 'dfgdf' , status: statuses[1]},
+    { id: 7, level: 2, hasChildren: false, isExpanded: false, title: 'nvncbcvbn', status: statuses[0] },
+    { id: 5, level: 0, hasChildren: true,  isExpanded: false, title: 'zxczxc', status: statuses[2]},
 ];
 
 const columns: Array<GridColumnConfig> = [
@@ -32,6 +46,10 @@ const columns: Array<GridColumnConfig> = [
     },
     {
         name: 'title',
+        width: 100
+    },
+    {
+        name: 'status',
         width: 100
     }
 ];
@@ -62,7 +80,12 @@ export class TreeGrid extends React.Component<TreeGridProps> {
                 isExpanded={node.isExpanded}>
             </TitleCell>
 
-            return [idNode, titleNode];
+            const statusNode = <StatusCell 
+                title={node.status.title} 
+                color={node.status.color}>
+            </StatusCell>
+
+            return [idNode, titleNode, statusNode];
         });
 
         return nodes;
