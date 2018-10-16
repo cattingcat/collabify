@@ -16,6 +16,9 @@ module.exports = {
         main: [
             './src/app/mvp/main/Main.ts'
         ],
+        login: [
+            './src/app/mvp/login/Login.ts'
+        ],
 
         SpaceModule: [
             './src/app/mvp/space/SpaceModule.ts'
@@ -70,6 +73,11 @@ module.exports = {
             template: path.resolve(__dirname, 'src', 'index.html'),
             filename: 'index.html',
             chunks: ['main']
+        }),
+        new HtmlWebpackPlugin({ 
+            template: path.resolve(__dirname, 'src', 'login.html'),
+            filename: 'login.html',
+            chunks: ['login']
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),

@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+using Microsoft.AspNetCore.Authentication.OAuth;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -19,8 +22,6 @@ namespace WebApplication
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            
             // configure identity server with in-memory stores, keys, clients and scopes
 //            services.AddIdentityServer()
 //                .AddDeveloperSigningCredential();
@@ -33,7 +34,22 @@ namespace WebApplication
             {
                 googleOptions.ClientId = Configuration["Authentication:Google:ClientId"];
                 googleOptions.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
+                //googleOptions.AuthorizationEndpoint = "/signin-google";
+                //googleOptions.TokenEndpoint = "/token";
+                googleOptions.CallbackPath = new PathString("/signin-google");
+                /*googleOptions.Events.OnTicketReceived = context =>
+                {
+                    Console.WriteLine("sfsdfsdf");
+                    return null;
+                };*/
+
+                googleOptions.Events = new OAuthEvents
+                {
+                    
+                };
             });
+            
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +70,8 @@ namespace WebApplication
             app.UseDefaultFiles(options);
             
             app.UseStaticFiles();
+
+            app.UseAuthentication();
 
             app.UseHttpsRedirection();
             app.UseMvc();

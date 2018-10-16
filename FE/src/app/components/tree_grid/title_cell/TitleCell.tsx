@@ -2,7 +2,7 @@ import * as React from 'react';
 import './title_cell.scss';
 import { CollapseIcon } from 'kit/collapse_icon/CollapseIcon';
 
-interface TreeGridProps {
+interface TitleCellProps {
     readonly level: number;
     readonly hasChildren: boolean;
     readonly isExpanded: boolean;
@@ -14,10 +14,10 @@ interface TitleCellState {
     isEditable: boolean;
 }
 
-export class TitleCell extends React.Component<TreeGridProps, TitleCellState> {
+export class TitleCell extends React.Component<TitleCellProps, TitleCellState> {
     private _formRef: React.RefObject<HTMLFormElement>;
 
-    constructor(props: TreeGridProps) {
+    constructor(props: TitleCellProps) {
         super(props);
         this.state = {isEditable: false};
         this._handleDbClick = this._handleDbClick.bind(this);
