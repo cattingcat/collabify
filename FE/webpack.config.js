@@ -6,7 +6,7 @@ const
 
 const output        = path.resolve(__dirname, '../BE/Collabify/WebApplication/wwwroot');
 const serviceWorker = path.resolve(__dirname, 'src', 'infrastructure', 'ServiceWorker.js');
-const icons = path.resolve(__dirname, 'src', 'icons');
+const icons         = path.resolve(__dirname, 'src', 'icons');
 const jsOutput      = path.resolve(output, 'js');
 
 module.exports = {
