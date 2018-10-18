@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication.Controllers
@@ -10,8 +11,16 @@ namespace WebApplication.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        [HttpGet("challenge")]
+        public IActionResult Challenge()
+        {
+            var props = new AuthenticationProperties() {RedirectUri = "/"};
+            return Challenge(props);
+        }
+
+
         // GET api/values
-        [HttpGet]
+        [HttpGet("get")]
         public ActionResult<IEnumerable<string>> Get()
         {
             return new string[] {"value1", "value2"};
