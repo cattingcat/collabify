@@ -1,5 +1,5 @@
 import * as React from 'react';
-//import './grid.scss';
+import './tree_grid.scss';
 import { Grid, GridColumnConfig } from 'components/grid/Grid';
 import { TitleCell } from 'components/tree_grid/title_cell/TitleCell';
 import { StatusCell } from 'components/tree_grid/status_cell/StatusCell';
@@ -58,7 +58,7 @@ const columns: Array<GridColumnConfig> = [
 
 export class TreeGrid extends React.Component<TreeGridProps> {
     render(): JSX.Element {
-        const classes = `grid ${this.props.className}`;
+        const classes = `tree-grid ${this.props.className}`;
         const nodes = this._prepareRows();
 
         return <div className={classes}>

@@ -3,13 +3,16 @@
 .grid {
     display: flex;
     flex-flow: column nowrap;
-
-    overflow-x: scroll;
+    height: 100%;
+    overflow: auto;
 
     .header-wrapper {
         flex-shrink: 0;
         border-top: 1px solid rgba(0,0,0,0.08);
         border-bottom: 1px solid rgba(0,0,0,0.08);
+        position: sticky;
+        top: 0;
+        background: white;
 
         thead {
             th {
@@ -30,7 +33,6 @@
 
     .content-wrapper {
         flex-grow: 1;
-        overflow-y: scroll;
     }
 
     table {
