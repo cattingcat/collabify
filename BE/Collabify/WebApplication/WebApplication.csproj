@@ -396,6 +396,16 @@
       <_ContentIncludedByDefault Remove="wwwroot\icons\worldwide.svg" />
       <_ContentIncludedByDefault Remove="wwwroot\icons\zoom-in.svg" />
       <_ContentIncludedByDefault Remove="wwwroot\icons\zoom-out.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\ComponentDemoModule.bundle.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\ComponentDemoModule.bundle.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\login.bundle.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\login.bundle.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\main.bundle.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\main.bundle.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\ReportsModule.bundle.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\ReportsModule.bundle.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\SpaceModule.bundle.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\SpaceModule.bundle.js.map" />
     </ItemGroup>
 
 </Project>

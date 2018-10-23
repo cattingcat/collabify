@@ -9,6 +9,7 @@ interface StatusCellProps {
     readonly status: Status;
     readonly wfs: Array<Workflow>;
     readonly className?: string;
+    readonly statusChange?:(status: Status) => void;
 }
 
 interface StatusCellState {
@@ -44,8 +45,10 @@ export class StatusCell extends React.Component<StatusCellProps, StatusCellState
                 <div
                     className='dropdown-container'
                     ref={this._cellRef}>
-                    
-                    <StatusDropdown wfs={wfs}> 
+
+                    <StatusDropdown 
+                        wfs={wfs}
+                        onClick={p.statusChange.bind(this)}> 
                     </StatusDropdown>
                 </div>
             }  
