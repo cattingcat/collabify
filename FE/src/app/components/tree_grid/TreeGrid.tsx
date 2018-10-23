@@ -3,6 +3,8 @@ import './tree_grid.scss';
 import { Grid, GridColumnConfig } from 'components/grid/Grid';
 import { TitleCell } from 'components/tree_grid/title_cell/TitleCell';
 import { StatusCell } from 'components/tree_grid/status_cell/StatusCell';
+import { Status } from 'domain/statuses/Status';
+import { Workflow } from 'domain/statuses/Workflow';
 
 interface TreeGridProps {
    readonly className?: string;
@@ -17,17 +19,16 @@ interface RowElement {
     readonly status: Status; 
 }
 
-interface Status {
-    readonly title: string;
-    readonly color: string;
-}
-
 const statuses: Array<Status> = [
     {title: 'qweqwe', color: 'red'},
     {title: 'dfgdfg', color: 'green'},
     {title: 'cvbcvb', color: 'yellow'},
     {title: 'sdfsdf', color: 'blue'},
 ];
+
+const wfs: Array<Workflow> = [
+    {statuses: statuses}
+]
 
 const rows: Array<RowElement> = [
     { id: 1, level: 0, hasChildren: true,  isExpanded: false, title: 'qweqwe', status: statuses[0] },
@@ -81,8 +82,8 @@ export class TreeGrid extends React.Component<TreeGridProps> {
             </TitleCell>
 
             const statusNode = <StatusCell 
-                title={node.status.title} 
-                color={node.status.color}>
+                status={statuses[0]}
+                wfs={wfs}>
             </StatusCell>
 
             return [idNode, titleNode, statusNode];

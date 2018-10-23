@@ -12,7 +12,7 @@ namespace WebApplication.Controllers
     public class ValuesController : ControllerBase
     {
         [HttpGet("challenge")]
-        public IActionResult Challenge()
+        public IActionResult GetChallenge()
         {
             var props = new AuthenticationProperties() {RedirectUri = "/"};
             return Challenge(props);
