@@ -29,10 +29,11 @@ export class StatusCell extends React.Component<StatusCellProps, StatusCellState
     }
 
     render(): JSX.Element {
-        const classes = `status_cell ${this.props.className}`;
         const p = this.props;
         const s = this.state;
         const wfs = this.props.wfs;
+
+        const classes = `status_cell ${p.className}`;
 
         return <div 
             className={classes}
@@ -48,7 +49,7 @@ export class StatusCell extends React.Component<StatusCellProps, StatusCellState
 
                     <StatusDropdown 
                         wfs={wfs}
-                        onClick={p.statusChange.bind(this)}> 
+                        onClick={this._handleStatusSelect.bind(this)}> 
                     </StatusDropdown>
                 </div>
             }  
@@ -60,14 +61,24 @@ export class StatusCell extends React.Component<StatusCellProps, StatusCellState
         document.addEventListener('click', this._handleClickOutside);
     }
 
+    private _handleStatusSelect(status: Status): void {
+        const p = this.props;
+        p.statusChange && p.statusChange.call(this, status);
+        this._hideDropdown();
+    }
+
     private _handleClickOutside(e: MouseEvent): void {
         const target = e.target;
         const isCellClick = target instanceof HTMLElement 
             && this._cellRef.current.contains(target);
 
         if(!isCellClick) {
-            this.setState({isShowDropDown: false});
-            document.removeEventListener('click', this._handleClickOutside);
+            this._hideDropdown();
         }
+    }
+
+    private _hideDropdown(): void {
+        this.setState({isShowDropDown: false});
+        document.removeEventListener('click', this._handleClickOutside);
     }
 }

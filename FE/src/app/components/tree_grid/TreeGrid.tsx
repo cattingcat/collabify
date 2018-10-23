@@ -35,7 +35,7 @@ const wfs: Array<Workflow> = [
     {statuses: statuses}
 ]
 
-const rows: Array<RowElement> = [
+const _rows: Array<RowElement> = [
     { id: 1, level: 0, hasChildren: true,  isExpanded: false, title: 'qweqwe', status: statuses[0] },
     { id: 2, level: 0, hasChildren: true,  isExpanded: true,  title: 'asdasd', status: statuses[2] },
     { id: 3, level: 1, hasChildren: true,  isExpanded: true,  title: 'rty'   , status: statuses[3]},
@@ -45,7 +45,7 @@ const rows: Array<RowElement> = [
     { id: 5, level: 0, hasChildren: true,  isExpanded: false, title: 'zxczxc', status: statuses[2]},
 ];
 
-const columns: Array<GridColumnConfig> = [
+const _columns: Array<GridColumnConfig> = [
     {
         name: 'id',
         width: 15
@@ -66,7 +66,7 @@ export class TreeGrid extends React.Component<TreeGridProps, TreeGridState> {
     constructor(props: TreeGridProps) {
         super(props);
         
-        this.state = {rows: rows, columns: columns};
+        this.state = {rows: _rows, columns: _columns};
     }
 
     render(): JSX.Element {
@@ -93,7 +93,7 @@ export class TreeGrid extends React.Component<TreeGridProps, TreeGridState> {
             </TitleCell>
 
             const statusNode = <StatusCell 
-                status={statuses[0]}
+                status={node.status}
                 wfs={wfs}
                 statusChange={this._handleItemStatusChange.bind(this, node)}>
             </StatusCell>
