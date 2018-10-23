@@ -7,11 +7,10 @@
 
     .dropdown-container {
         position: relative;
+    }
 
-        .dropdown {
-            position: absolute;
-            background: white;
-            box-shadow: 0 0 5px black;
-        }
+    .title_text {
+        user-select: none;
+        cursor: pointer;
     }
 }

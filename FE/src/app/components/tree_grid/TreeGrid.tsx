@@ -3,6 +3,8 @@ import './tree_grid.scss';
 import { Grid, GridColumnConfig } from 'components/grid/Grid';
 import { TitleCell } from 'components/tree_grid/title_cell/TitleCell';
 import { StatusCell } from 'components/tree_grid/status_cell/StatusCell';
+import { Status } from 'domain/statuses/Status';
+import { Workflow } from 'domain/statuses/Workflow';
 
 interface TreeGridProps {
    readonly className?: string;
@@ -17,9 +19,9 @@ interface RowElement {
     readonly status: Status; 
 }
 
-interface Status {
-    readonly title: string;
-    readonly color: string;
+interface TreeGridState {
+    rows: Array<RowElement>;
+    columns: Array<GridColumnConfig>;
 }
 
 const statuses: Array<Status> = [
@@ -28,6 +30,10 @@ const statuses: Array<Status> = [
     {title: 'cvbcvb', color: 'yellow'},
     {title: 'sdfsdf', color: 'blue'},
 ];
+
+const wfs: Array<Workflow> = [
+    {statuses: statuses}
+]
 
 const rows: Array<RowElement> = [
     { id: 1, level: 0, hasChildren: true,  isExpanded: false, title: 'qweqwe', status: statuses[0] },
@@ -56,21 +62,27 @@ const columns: Array<GridColumnConfig> = [
 
 
 
-export class TreeGrid extends React.Component<TreeGridProps> {
+export class TreeGrid extends React.Component<TreeGridProps, TreeGridState> {
+    constructor(props: TreeGridProps) {
+        super(props);
+        
+        this.state = {rows: rows, columns: columns};
+    }
+
     render(): JSX.Element {
         const classes = `tree-grid ${this.props.className}`;
         const nodes = this._prepareRows();
 
         return <div className={classes}>
             <Grid
-                columns={columns}
+                columns={this.state.columns}
                 rows={nodes}>
             </Grid>
         </div>
     }
 
     private _prepareRows(): Array<Array<JSX.Element>> {
-        const nodes = rows.map((node) => {
+        const nodes = this.state.rows.map((node) => {
             const idNode = <span>{node.id}</span>
 
             const titleNode = <TitleCell 
@@ -81,13 +93,25 @@ export class TreeGrid extends React.Component<TreeGridProps> {
             </TitleCell>
 
             const statusNode = <StatusCell 
-                title={node.status.title} 
-                color={node.status.color}>
+                status={statuses[0]}
+                wfs={wfs}
+                statusChange={this._handleItemStatusChange.bind(this, node)}>
             </StatusCell>
 
             return [idNode, titleNode, statusNode];
         });
 
         return nodes;
+    }
+
+    private _handleItemStatusChange(node: RowElement, status: Status): void {
+        const newRows = this.state.rows.map(row => {
+            if (row == node){
+                return {...row, status: status };
+            }
+            return row; 
+        });
+ 
+        this.setState({rows: newRows});
     }
 }
