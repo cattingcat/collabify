@@ -6,7 +6,6 @@ import { StatusCell, OnEditEvent } from 'components/tree_grid/status_cell/Status
 import { Status } from 'domain/statuses/Status';
 import { Workflow } from 'domain/statuses/Workflow';
 import { StatusDropdown } from 'components/status_picker/StatusDropdown';
-import { stat } from 'fs';
 
 export interface RowElement {
     readonly id: number;

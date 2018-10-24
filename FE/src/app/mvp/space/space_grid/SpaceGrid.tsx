@@ -5,11 +5,6 @@ import { GridView } from 'components/grid_view/GridView';
 
 
 export class SpaceGrid extends React.Component {
-    constructor(props: any) {
-        super(props);
-        this._handleClick = this._handleClick.bind(this);
-    }
-
     render(): JSX.Element {
         return <div className='space-grid'>
             <PanelHeader 
@@ -18,12 +13,7 @@ export class SpaceGrid extends React.Component {
 
             <div className='content'>
                 <GridView></GridView>
-
-                <button onClick={this._handleClick}>Click me</button>
             </div>
         </div>
     }
-
-
-    private _handleClick(): void { }
 }
