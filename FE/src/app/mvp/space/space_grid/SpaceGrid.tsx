@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './space_grid.scss';
-import { TreeGrid } from 'components/tree_grid/TreeGrid';
 import { PanelHeader } from 'components/panel_header/PanelHeader';
+import { GridView } from 'components/grid_view/GridView';
 
 
 export class SpaceGrid extends React.Component {
@@ -17,7 +17,7 @@ export class SpaceGrid extends React.Component {
             </PanelHeader>
 
             <div className='content'>
-                <TreeGrid></TreeGrid>
+                <GridView></GridView>
 
                 <button onClick={this._handleClick}>Click me</button>
             </div>

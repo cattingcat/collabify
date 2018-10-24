@@ -62,6 +62,11 @@
         }
 
         &.content {
+            td {
+                padding: 0;
+                height: 25px;
+            }
+            
             tr:nth-child(2n+1) {
                 background: #fbfbfb;
             }

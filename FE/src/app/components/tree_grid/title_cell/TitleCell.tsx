@@ -8,6 +8,9 @@ interface TitleCellProps {
     readonly isExpanded: boolean;
     readonly title: string;
     readonly className?: string;
+
+    readonly onExpand?: () => void;
+    readonly onTextSubmit?: (text: String) => void;
 }
 
 interface TitleCellState {
@@ -15,30 +18,34 @@ interface TitleCellState {
 }
 
 export class TitleCell extends React.Component<TitleCellProps, TitleCellState> {
-    private _formRef: React.RefObject<HTMLFormElement>;
+    private readonly _formRef: React.RefObject<HTMLFormElement>;
+    private readonly _inputRef: React.RefObject<HTMLInputElement>;
 
     constructor(props: TitleCellProps) {
         super(props);
+
         this.state = {isEditable: false};
         this._handleDbClick = this._handleDbClick.bind(this);
         this._handleClickOutside = this._handleClickOutside.bind(this);
         this._handleFormSubmit = this._handleFormSubmit.bind(this);
 
         this._formRef = React.createRef<HTMLFormElement>();
+        this._inputRef = React.createRef<HTMLInputElement>();
     }
 
     render(): JSX.Element {
-        const classes = `title_cell ${this.props.className}`;
         const p = this.props;
         const s = this.state;
-        const paddingLeft = p.level * 10;
+        const classes = `title_cell ${p.className}`;
+        const paddingLeft = 10 + p.level * 10;
         const titleStyle: React.CSSProperties = {paddingLeft: `${paddingLeft}px`};
 
         let collapseIcon = null;
         if(p.hasChildren) {
             collapseIcon = <CollapseIcon 
                 className='collapse_expand_icon'
-                isExpanded={p.isExpanded}>
+                isExpanded={p.isExpanded}
+                onClick={p.onExpand}>
             </CollapseIcon>;
         } else {
             collapseIcon = <div className='expand_icon_placeholder'></div>;
@@ -56,7 +63,7 @@ export class TitleCell extends React.Component<TitleCellProps, TitleCellState> {
                     action="" 
                     ref={this._formRef}
                     onSubmit={this._handleFormSubmit}>
-                    <input type="text" name="" id=""/>
+                    <input ref={this._inputRef} type="text" name="" id=""/>
                 </form>
             ) : (
                 <div className='title_text'>{p.title}</div>    
@@ -83,7 +90,7 @@ export class TitleCell extends React.Component<TitleCellProps, TitleCellState> {
 
     private _handleFormSubmit(event: React.FormEvent): void {
         event.preventDefault();
-
-        console.log('QQQQ');
+        this.props.onTextSubmit && 
+            this.props.onTextSubmit(this._inputRef.current.value);
     }
 }
