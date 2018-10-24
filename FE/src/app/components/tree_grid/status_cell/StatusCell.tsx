@@ -1,7 +1,5 @@
 import * as React from 'react';
 import './status_cell.scss';
-import { StatusDropdown } from 'components/status_picker/StatusDropdown';
-import { Workflow } from 'domain/statuses/Workflow';
 import { Status } from 'domain/statuses/Status';
 
 export interface OnEditEvent {
@@ -26,7 +24,7 @@ export class StatusCell extends React.Component<StatusCellProps> {
         const classes = `status_cell ${p.className}`;
         const titleClasses = `title_text kit-status-${p.status.color}-color`;
 
-        return <div 
+        return <div
             className={classes}
             onDoubleClick={this._handleCellClick}>
 
@@ -35,6 +33,6 @@ export class StatusCell extends React.Component<StatusCellProps> {
     }
 
     private _handleCellClick(e: React.MouseEvent<HTMLDivElement>): void {
-        this.props.onEdit({originalEvent: e});
+        this.props.onEdit({ originalEvent: e });
     }
 }
