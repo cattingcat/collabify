@@ -1,0 +1,20 @@
+$status-color-red: red;
+$status-color-blue: blue;
+$status-color-green: green;
+$status-color-purple: purple;
+$status-color-yellow: rgb(145, 145, 4);
+$status-color-gray: gray;
+
+.kit-status-red-bg {background: $status-color-red;}
+.kit-status-blue-bg {background: $status-color-blue;}
+.kit-status-green-bg {background: $status-color-green;}
+.kit-status-purple-bg {background: $status-color-purple;}
+.kit-status-yellow-bg {background: $status-color-yellow}
+.kit-status-gray-bg {background: $status-color-gray;}
+
+.kit-status-red-color {color: $status-color-red;}
+.kit-status-blue-color {color: $status-color-blue;}
+.kit-status-green-color {color: $status-color-green;}
+.kit-status-purple-color {color: $status-color-purple;}
+.kit-status-yellow-color {color: $status-color-yellow;}
+.kit-status-gray-color {color: $status-color-gray;}

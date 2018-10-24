@@ -8,26 +8,27 @@ namespace Collabify.ConsoleApp
     {
         static void Main(string[] args)
         {
-            var server = "bolt://hobby-chgobhinbgiagbkemdonfcbl.dbs.graphenedb.com:24786";
-            var user = "admin";
-            var password = "b.cDl4271RdV33.7UHpqUHznmdQoNi1";
+            var server = new Uri("bolt://54.236.30.56:35231");
+            //var serverHttps = "https://hobby-chgobhinbgiagbkemdonfcbl.dbs.graphenedb.com:24780/db/data/";
+            var user = "neo4j";
+            var password = "reason-slash-match";
+            
+            
+            var query = 
+                "MATCH (u:Troll) "+
+                "RETURN u.screen_name as screen_name "+
+                "LIMIT 500";
 
             using (IDriver driver = GraphDatabase.Driver(server, AuthTokens.Basic(user, password)))
             {
                 var session = driver.Session();
 
-                var greeting = session.WriteTransaction(tx =>
+                var res = session.Run(query);
+                foreach (var key in res.Keys)
                 {
-                    var result = tx.Run("CREATE (a:Greeting) " +
-                                        "SET a.message = $message " +
-                                        "RETURN a.message + ', from node ' + id(a)",
-                        new {message = "qwe"});
-                    
-                    
-                    return result.Single()[0].As<string>();
-                });
-                
-                Console.WriteLine(greeting);
+                    Console.WriteLine(key);
+                }
+                Console.WriteLine(res);
             }
 
         }

@@ -4,12 +4,8 @@
     display: flex;
     flex-flow: row nowrap;
 
-
-    .dropdown-container {
-        position: relative;
-    }
-
     .title_text {
+        font-weight: 500;
         user-select: none;
         cursor: pointer;
     }

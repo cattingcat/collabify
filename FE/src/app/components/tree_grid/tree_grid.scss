@@ -1,3 +1,9 @@
 .tree-grid { 
     height: 100%;
+    position: relative;
+
+    .status-dropdown {
+        position: absolute;
+        top: 0;
+    }
 }
