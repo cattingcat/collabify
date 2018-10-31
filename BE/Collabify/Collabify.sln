@@ -16,6 +16,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{3247F7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collabify.Domain.Entities", "Collabify.Domain.Entities\Collabify.Domain.Entities.csproj", "{BA96E162-DFEB-4EA3-9ECD-B5FABB84CF71}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Collabify.Dal.DalCore", "Collabify.Dal.DalCore\Collabify.Dal.DalCore.fsproj", "{17789297-5829-491E-9F0B-7CFED1044B69}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Collabify.Bl.Services", "Collabify.Bl.Services\Collabify.Bl.Services.fsproj", "{DFFB871E-A99B-44B2-853D-082E50D1B0C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,9 +38,19 @@ Global
 		{BA96E162-DFEB-4EA3-9ECD-B5FABB84CF71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA96E162-DFEB-4EA3-9ECD-B5FABB84CF71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA96E162-DFEB-4EA3-9ECD-B5FABB84CF71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17789297-5829-491E-9F0B-7CFED1044B69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17789297-5829-491E-9F0B-7CFED1044B69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17789297-5829-491E-9F0B-7CFED1044B69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17789297-5829-491E-9F0B-7CFED1044B69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFFB871E-A99B-44B2-853D-082E50D1B0C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFFB871E-A99B-44B2-853D-082E50D1B0C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFFB871E-A99B-44B2-853D-082E50D1B0C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFFB871E-A99B-44B2-853D-082E50D1B0C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B1023009-1201-45ED-9B7A-DA6128A1D85C} = {CBCF07D0-51DF-4FA2-93AC-A1E42C97A57E}
 		{BA96E162-DFEB-4EA3-9ECD-B5FABB84CF71} = {3247F7C0-7386-4304-92CB-063B7E2950AE}
+		{17789297-5829-491E-9F0B-7CFED1044B69} = {0F8F800A-DE02-46E7-B725-C3C185E7FD33}
+		{DFFB871E-A99B-44B2-853D-082E50D1B0C3} = {6687FDC0-409B-4076-876B-CA86AE6709F5}
 	EndGlobalSection
 EndGlobal

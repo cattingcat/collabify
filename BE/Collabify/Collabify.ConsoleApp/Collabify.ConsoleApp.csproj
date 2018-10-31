@@ -9,4 +9,9 @@
       <PackageReference Include="Neo4j.Driver" Version="1.7.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Collabify.Dal.DalCore\Collabify.Dal.DalCore.fsproj" />
+      <ProjectReference Include="..\Collabify.Domain.Entities\Collabify.Domain.Entities.csproj" />
+    </ItemGroup>
+
 </Project>
