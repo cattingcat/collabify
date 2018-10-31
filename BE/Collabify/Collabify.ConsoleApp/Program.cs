@@ -12,8 +12,6 @@ namespace Collabify.ConsoleApp
             var server = new Uri("bolt://34.227.93.73:33839");
             var user = "neo4j";
             var password = "appeals-windlasses-tone";
-
-            Say.hello("qweqwe");
             
             var query = 
                 "MATCH (u:Troll) "+

@@ -5,7 +5,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="Library.fs"/>
+        <Compile Include="SettingsUp.fs" />
+        <Compile Include="Library.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="mongocsharpdriver" Version="2.7.0" />
     </ItemGroup>
 
 </Project>

@@ -1,5 +1,9 @@
 namespace Collabify.Dal.DalCore
 
-module Say =
-    let public hello name =
-        printfn "Hello %s" name
+module SomeProcess =
+    open MongoCrud
+    open MongoDB.Bson
+    
+    let task: TaskData = { Id = new BsonObjectId(ObjectId.GenerateNewId()); Title = "Titly"; Body = "SomeBody"; }
+    
+    MongoCrud.create task
