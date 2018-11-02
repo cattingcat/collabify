@@ -2,10 +2,15 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp2.1</TargetFramework>
+        <OutputType>Exe</OutputType>
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="Library.fs"/>
+        <Compile Include="SettingsUp.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="mongocsharpdriver" Version="2.7.0" />
     </ItemGroup>
 
 </Project>
