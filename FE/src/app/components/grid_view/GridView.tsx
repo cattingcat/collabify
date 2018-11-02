@@ -49,20 +49,62 @@ const _rows: Array<RowElement> = [
     { id: 6, level: 2, hasChildren: false, isExpanded: false, title: 'dfgdf' , status: _devStatuses[1]},
     { id: 7, level: 2, hasChildren: false, isExpanded: false, title: 'nvncbcvbn', status: _devStatuses[0] },
     { id: 5, level: 0, hasChildren: true,  isExpanded: false, title: 'zxczxc', status: _devStatuses[2]},
+    { id: 1, level: 0, hasChildren: true,  isExpanded: false, title: 'qweqwe', status: _statuses[0] },
+    { id: 2, level: 0, hasChildren: true,  isExpanded: true,  title: 'asdasd', status: _statuses[2] },
+    { id: 3, level: 1, hasChildren: true,  isExpanded: true,  title: 'rty'   , status: _statuses[3]},
+    { id: 4, level: 2, hasChildren: false, isExpanded: false, title: 'nvnvbn', status: _statuses[2]},
+    { id: 6, level: 2, hasChildren: false, isExpanded: false, title: 'dfgdf' , status: _statuses[1]},
+    { id: 7, level: 2, hasChildren: false, isExpanded: false, title: 'nvncbcvbn', status: _statuses[0] },
+    { id: 5, level: 0, hasChildren: true,  isExpanded: false, title: 'zxczxc', status: _statuses[2]},
+    { id: 1, level: 0, hasChildren: true,  isExpanded: false, title: 'qweqwe', status: _devStatuses[0] },
+    { id: 2, level: 0, hasChildren: true,  isExpanded: true,  title: 'asdasd', status: _devStatuses[2] },
+    { id: 3, level: 1, hasChildren: true,  isExpanded: true,  title: 'rty'   , status: _devStatuses[3]},
+    { id: 4, level: 2, hasChildren: false, isExpanded: false, title: 'nvnvbn', status: _devStatuses[2]},
+    { id: 6, level: 2, hasChildren: false, isExpanded: false, title: 'dfgdf' , status: _devStatuses[1]},
+    { id: 7, level: 2, hasChildren: false, isExpanded: false, title: 'nvncbcvbn', status: _devStatuses[0] },
+    { id: 5, level: 0, hasChildren: true,  isExpanded: false, title: 'zxczxc', status: _devStatuses[2]},
+    { id: 1, level: 0, hasChildren: true,  isExpanded: false, title: 'qweqwe', status: _statuses[0] },
+    { id: 2, level: 0, hasChildren: true,  isExpanded: true,  title: 'asdasd', status: _statuses[2] },
+    { id: 3, level: 1, hasChildren: true,  isExpanded: true,  title: 'rty'   , status: _statuses[3]},
+    { id: 4, level: 2, hasChildren: false, isExpanded: false, title: 'nvnvbn', status: _statuses[2]},
+    { id: 6, level: 2, hasChildren: false, isExpanded: false, title: 'dfgdf' , status: _statuses[1]},
+    { id: 7, level: 2, hasChildren: false, isExpanded: false, title: 'nvncbcvbn', status: _statuses[0] },
+    { id: 5, level: 0, hasChildren: true,  isExpanded: false, title: 'zxczxc', status: _statuses[2]},
+    { id: 1, level: 0, hasChildren: true,  isExpanded: false, title: 'qweqwe', status: _devStatuses[0] },
+    { id: 2, level: 0, hasChildren: true,  isExpanded: true,  title: 'asdasd', status: _devStatuses[2] },
+    { id: 3, level: 1, hasChildren: true,  isExpanded: true,  title: 'rty'   , status: _devStatuses[3]},
+    { id: 4, level: 2, hasChildren: false, isExpanded: false, title: 'nvnvbn', status: _devStatuses[2]},
+    { id: 6, level: 2, hasChildren: false, isExpanded: false, title: 'dfgdf' , status: _devStatuses[1]},
+    { id: 7, level: 2, hasChildren: false, isExpanded: false, title: 'nvncbcvbn', status: _devStatuses[0] },
+    { id: 5, level: 0, hasChildren: true,  isExpanded: false, title: 'zxczxc', status: _devStatuses[2]},
+    { id: 1, level: 0, hasChildren: true,  isExpanded: false, title: 'qweqwe', status: _statuses[0] },
+    { id: 2, level: 0, hasChildren: true,  isExpanded: true,  title: 'asdasd', status: _statuses[2] },
+    { id: 3, level: 1, hasChildren: true,  isExpanded: true,  title: 'rty'   , status: _statuses[3]},
+    { id: 4, level: 2, hasChildren: false, isExpanded: false, title: 'nvnvbn', status: _statuses[2]},
+    { id: 6, level: 2, hasChildren: false, isExpanded: false, title: 'dfgdf' , status: _statuses[1]},
+    { id: 7, level: 2, hasChildren: false, isExpanded: false, title: 'nvncbcvbn', status: _statuses[0] },
+    { id: 5, level: 0, hasChildren: true,  isExpanded: false, title: 'zxczxc', status: _statuses[2]},
+    { id: 1, level: 0, hasChildren: true,  isExpanded: false, title: 'qweqwe', status: _devStatuses[0] },
+    { id: 2, level: 0, hasChildren: true,  isExpanded: true,  title: 'asdasd', status: _devStatuses[2] },
+    { id: 3, level: 1, hasChildren: true,  isExpanded: true,  title: 'rty'   , status: _devStatuses[3]},
+    { id: 4, level: 2, hasChildren: false, isExpanded: false, title: 'nvnvbn', status: _devStatuses[2]},
+    { id: 6, level: 2, hasChildren: false, isExpanded: false, title: 'dfgdf' , status: _devStatuses[1]},
+    { id: 7, level: 2, hasChildren: false, isExpanded: false, title: 'nvncbcvbn', status: _devStatuses[0] },
+    { id: 5, level: 0, hasChildren: true,  isExpanded: false, title: 'zxczxc', status: _devStatuses[2]},
 ];
 
 const _columns: Array<GridColumnConfig> = [
     {
         name: 'id',
-        width: 15
+        width: 45
     },
     {
         name: 'title',
-        width: 100
+        width: 500
     },
     {
         name: 'status',
-        width: 100
+        width: 900
     }
 ];
 

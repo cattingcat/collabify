@@ -6,6 +6,7 @@ import { StatusCell, OnEditEvent } from 'components/tree_grid/status_cell/Status
 import { Status } from 'domain/statuses/Status';
 import { Workflow } from 'domain/statuses/Workflow';
 import { StatusDropdown } from 'components/status_picker/StatusDropdown';
+import { IdCell } from 'components/tree_grid/id_cell/IdCell';
 
 export interface RowElement {
     readonly id: number;
@@ -74,7 +75,7 @@ export class TreeGrid extends React.Component<TreeGridProps, TreeGridState> {
     private _prepareRows(): Array<Array<JSX.Element>> {
         const p = this.props;
         const nodes = p.rows.map((node) => {
-            const idNode = <span>{node.id}</span>
+            const idNode = <IdCell id={node.id}></IdCell>;
 
             const titleNode = <TitleCell 
                 title={node.title}
