@@ -2,11 +2,11 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp2.1</TargetFramework>
+        <OutputType>Exe</OutputType>
     </PropertyGroup>
 
     <ItemGroup>
         <Compile Include="SettingsUp.fs" />
-        <Compile Include="Library.fs" />
     </ItemGroup>
 
     <ItemGroup>
